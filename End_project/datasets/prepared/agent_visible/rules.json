@@ -1,0 +1,14 @@
+{
+  "allocation_policy": "每笔交易最多归属一个订单；歧义挂起，资金列为unallocated；目标外订单只作候选上下文。",
+  "balance_policy": "received=成功收款；refunded=成功退款；net=received-refunded；collection_gap=expected-received；net_vs_original=expected-net。正常部分退款不视作少收。",
+  "currency": "BRL",
+  "cutoff_policy": "effective_at和observed_at均不晚于cutoff，包含等于边界。",
+  "dedup_policy": "按transaction_id计一笔，同一交易通知金额、状态、归属和生效时间必须一致；保留截止前最早observed_at通知，同时间按event_id。",
+  "matching_policy": "先用order_id；缺失时用唯一merchant_reference；退款用original_transaction_id。同额仅产生候选，不能单独确认归属。",
+  "money_unit": "integer_cent",
+  "period_policy": "period_batch以[start,end)选订单created_at，按cutoff核验交易；可见orders即该环境全量订单。",
+  "refund_policy": "仅success退款减少净收；pending不扣款。退款成功累计不能超过原交易成功金额。",
+  "source_policy": "Olist没有实际到账时间、退款或通知；所有事件均为模拟，installments不是到账分笔。",
+  "time_policy": "模拟事件统一使用固定UTC-03:00；原订单无时区，按该偏移解释，不声称原始时区已知。",
+  "version": "brl-reconciliation-v1"
+}

@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "amount_cents": 14784,
+      "currency": "BRL",
+      "effective_at": "2018-07-13T23:04:11-03:00",
+      "event_id": "5a8792c6869afc38b1bd8b51b193b2ab",
+      "kind": "receipt",
+      "merchant_reference": "4e1206e9aa46908cd74aab12bd97abed",
+      "observed_at": "2018-07-13T23:04:11-03:00",
+      "order_id": null,
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "db0e3fd2df07154248362394de7e47be"
+    },
+    {
+      "amount_cents": 11146,
+      "currency": "BRL",
+      "effective_at": "2018-07-13T23:04:11-03:00",
+      "event_id": "d09b0c67daf997963a0ee0236b8edab3",
+      "kind": "receipt",
+      "merchant_reference": "34fe3bafae023e9be1cb9f75d035796d",
+      "observed_at": "2018-07-13T23:04:11-03:00",
+      "order_id": "881f459dc6f95cc0e678aff5e3450434",
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "7742e240b56e4304db5a99a755f8edfa"
+    },
+    {
+      "amount_cents": 17388,
+      "currency": "BRL",
+      "effective_at": "2018-07-13T23:04:11-03:00",
+      "event_id": "c044eb87f265f6e02999bcb48583dcdd",
+      "kind": "receipt",
+      "merchant_reference": "468dc94fd9ca7a55b91121bc343f6e87",
+      "observed_at": "2018-07-13T23:04:11-03:00",
+      "order_id": "586ee5bee5e37b183065fa9d622a4f99",
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "2491e6029f347b91dc381f4100eed204"
+    }
+  ],
+  "orders": [
+    {
+      "created_at": "2018-03-11T11:45:43-03:00",
+      "currency": "BRL",
+      "customer_reference": "7ab4d24df308992cf39829fcfa59e540",
+      "expected_cents": 11146,
+      "merchant_reference": "34fe3bafae023e9be1cb9f75d035796d",
+      "order_id": "881f459dc6f95cc0e678aff5e3450434",
+      "source_payment_attributes": [
+        {
+          "payment_installments": 1,
+          "payment_type": "voucher"
+        },
+        {
+          "payment_installments": 4,
+          "payment_type": "credit_card"
+        }
+      ]
+    },
+    {
+      "created_at": "2018-07-05T23:04:11-03:00",
+      "currency": "BRL",
+      "customer_reference": "d9d2cc594f2d552a950789f4344cedcd",
+      "expected_cents": 14784,
+      "merchant_reference": "4e1206e9aa46908cd74aab12bd97abed",
+      "order_id": "added253507483b5640242774241d0ac",
+      "source_payment_attributes": [
+        {
+          "payment_installments": 2,
+          "payment_type": "credit_card"
+        }
+      ]
+    },
+    {
+      "created_at": "2018-03-18T16:02:06-03:00",
+      "currency": "BRL",
+      "customer_reference": "27f3a32a6c6dc68583bb8c3598f0f5c7",
+      "expected_cents": 17388,
+      "merchant_reference": "468dc94fd9ca7a55b91121bc343f6e87",
+      "order_id": "586ee5bee5e37b183065fa9d622a4f99",
+      "source_payment_attributes": [
+        {
+          "payment_installments": 2,
+          "payment_type": "credit_card"
+        }
+      ]
+    }
+  ],
+  "schema_version": "olist-sim-v2"
+}

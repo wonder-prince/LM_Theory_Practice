@@ -1,0 +1,266 @@
+{
+  "code_sha256": {
+    "scripts/audit_sources.py": "e36a63283941e609727042e9c92015375922cd93aa42f4910a15ddbbce1baef0",
+    "scripts/fetch_olist.py": "4f9da47d946563d89ea4e86d62842514d85869a4c206b2122e86ce20319f650c",
+    "scripts/prepare_data.py": "033d9fcd0b7f3ceb433629302e643d7d6d443b977c5e90ba38dc6c11255dd045",
+    "scripts/reference.py": "879cec436fdf662f6e205ecdb2487c23a4f1eb8ca5ed6c9968863e5191a49ebc",
+    "scripts/validate_data.py": "1e1dbc88083032265c79428aeb8a079d2e742cc2937b1bd62228d4474d46f0dd",
+    "tests/test_data.py": "faf2cf2f26be31032550786600fddc85703a165401737c0ba1b8f6b3bd89158e"
+  },
+  "eligible_pool_counts": {
+    "test": 19139,
+    "train": 67290,
+    "val": 9475
+  },
+  "output_sha256": {
+    "agent_visible/rules.json": "14ce8457c3a33259fd20fd94393cb37951ac35e8fecbe4822f3dc9788b84fee7",
+    "agent_visible/test/environments/1ec3d3a8582793a81a992c183dab3ee6.json": "004fddabb840494a9cde1a61b2c59a33453b1efa759cafa7c78097491f5fab68",
+    "agent_visible/test/environments/20f2274a234cad0531577c5581fc4eef.json": "f902306038eb07b0cf9ab12761919ac2422227806ba412545277ca6fbe4a92cf",
+    "agent_visible/test/environments/328e2e389de3975af6c6bd7ccd8a7115.json": "95816994f564dfa3cd91116bde01b8eb565974bff71ed4e249de048f2060510c",
+    "agent_visible/test/environments/34cbe5449c6d9a63a30de59b5a9e846f.json": "93a99383d4c4e53a8e38c427091821fb01368cbeb914ff940b537f4939a33ac7",
+    "agent_visible/test/environments/378353cf092d4993cb4a912ca6fd3baf.json": "1bcfa108e44f7000c83315e197673a1a9fdf0f069b322bef4dfef50dee8119a8",
+    "agent_visible/test/environments/514d121e75154ef38acfefd74fe52b8b.json": "1518d3682714385c02fee686d3ce29eb5da346f79a3cc4aae97244116c5b95aa",
+    "agent_visible/test/environments/5578fd1e38b713d272ec5a18ce7cd952.json": "a9bf57b995fe59289cd6a08f3aa2cc04b283d915d45c82c1e19f6b314ad925fe",
+    "agent_visible/test/environments/5f526dbe159c3d8ac0e8807496ba58a0.json": "f1ac244271eb9cb185f9f198a59fe108878ea80bcdf339cef7ba71f647da2574",
+    "agent_visible/test/environments/606774f8d98180b7dee57cfd15d3d17f.json": "d5ec858735f51f816956c4122704bc91402f635f9ba050e4f78c3f0e94557beb",
+    "agent_visible/test/environments/62ce592416ad601c4f187128ba5323a5.json": "1da4dd642543747d72e6b00c04325c0d681ca0eb22f7a13ab6a243b63d2e2315",
+    "agent_visible/test/environments/758dd05f327498726b567cde1b621a89.json": "f384a8c0b5b7da34ccad8928f13ec79bade17178580907a0bb6c36149975a4ac",
+    "agent_visible/test/environments/99866e96a63c97b0b380f2b5a4120b22.json": "8665dbe407b165c0d17c084df0ca3be3a709c1b6124e4ab2737e77e397553c4e",
+    "agent_visible/test/environments/9b5246abecedc723b013d5bc2df08195.json": "e0e55de3c3683d67e5744b8bdf6eb8744f5f40d5e943b8d819ea56f7b2373762",
+    "agent_visible/test/environments/b10b3e304bfb11034431a9c7d1513608.json": "6512d78ea37baa4daa7bdba2148fe1afc46570554f475f6db31532587b3a9b73",
+    "agent_visible/test/environments/b5929aea97fd49a8920aabdbb1e1237e.json": "9a6feffbc94f7c37b25d2493c5c3e5d7be1902466459e742c47fc4cb8dc9ba22",
+    "agent_visible/test/environments/b5a0c315dc459db4704bcb7d3b40f9cc.json": "eb022ea9fcbb18cbe24c783ab424927d9df1e0eacf491eb0f740046809d9e3d3",
+    "agent_visible/test/environments/be6c0ef995e0513d28ed5112e1464a4c.json": "1bf025d4f830470927900de457582ad27acecb810d3af73f47e1cc85c94731d2",
+    "agent_visible/test/environments/cb8de0d7cf15ce09eef72379064e0190.json": "4df6b60e8ca5932a8fb72178e32a27f7c818a97e1a1cfed4ceec5c3a52cf71c5",
+    "agent_visible/test/environments/d1040a5b49a7da73fd5ba6ff94322f8d.json": "f2a06dfec187ad94f16e17a5dbb1f8d44db235764d2e53af3b804a338f150d31",
+    "agent_visible/test/environments/d58abf9562af2df5fe8063cba7791ba1.json": "49051f555011e32336387fea681edd352da6214eedf5401d6df7df3079294559",
+    "agent_visible/test/environments/d967645c5ec25ec3ae13810afc4b9b98.json": "e8d83dc718a00b1b50763964a06568126c005da28cdd90f182da8b3882958db5",
+    "agent_visible/test/environments/dc8ec34418a242403270b559be7119c7.json": "098f12885cec6a8814cee0ee00210f6bcf050eb59cbe6dec7275dc228241c6d4",
+    "agent_visible/test/environments/e86c27c332aa9ea2d7074a9d7c3e331d.json": "918d6720cc28fe4ebc7bb1cb31ef3656431e5b54e4ef7a379ad299e4a29a8fda",
+    "agent_visible/test/environments/ec0f00c194a480379f63dcadec4cf22f.json": "915a102ef375e661517f5ba7c05ae308b34b26ad930c3c9181f3551092bdb94d",
+    "agent_visible/test/tasks.jsonl": "68f20b7a4f2c16bdf7b3d32deba0423d3510bdd76a70c4aa26ba6cb70276f726",
+    "agent_visible/train/environments/004498f4b987f7c1cc9c26a813678d7a.json": "c66e975f10d7c73467e5370de58fcd9e502063e84b953dcc56c19f873637acba",
+    "agent_visible/train/environments/13869287c3252483bda9d0a2d5f7fbd2.json": "2df91b5a4b98d8ccd45c2641d5b7071acb97985aa9b8ff3ebce1942c49d9c005",
+    "agent_visible/train/environments/422d2e9f71b1e98c9122a055d70de64f.json": "80a98cba859a869ccb64a5bd3545753697346b3a132e31c0d91b08d19262ae3d",
+    "agent_visible/train/environments/447902731d343584906a6115f904201f.json": "fc59a00e2ee42d832b59dbdc900c87900029ea0d919720657efdae37449c061f",
+    "agent_visible/train/environments/460f661f900f5390875004e94dae694b.json": "e015750d39569e630848eabf70b037c415ae872f61203c2ec99b9a028ad3db23",
+    "agent_visible/train/environments/6b46bff47b1d21ebae9289bb53134bc0.json": "71602d26d3730825d26adf1b7456aa1a5d0acf12718fd9fbaad342488bae24b6",
+    "agent_visible/train/environments/7e9a92dd5d260d6e8e9a8013370325fc.json": "3aedc386b31c2b9b5d73c6c202b53a995d15dadeaa0c4eec0dfec49cece117de",
+    "agent_visible/train/environments/a12db82b23f58c30e0e29095be4489c8.json": "b989458ce91cd41db425d04efeb71818502ee1217ae712c975b636cd3420c942",
+    "agent_visible/train/environments/bda40df5317bbb1465ae2ffda43641f3.json": "7a4e1d4bb9bd25def2e8a7e10939d581415171c5479dfadb49c837a044ba8a4f",
+    "agent_visible/train/environments/d1be28b008f116ea964f28f98ca6d719.json": "3d74c9c625bdc3dbef9c8f9244371a2a5e517ddd6e76a598918dd3988282eb10",
+    "agent_visible/train/environments/f3c95789ace1a9542c5d6baed2eac902.json": "a8c3edc5548499e4fcb8d35690ba3c84399d551b61537f2e956e9ae17d8ffe63",
+    "agent_visible/train/environments/f8036d41190c30d7d6c2e52c6b2ce606.json": "0fb33e13446374420fa1acb03c5dd251a814e9c4588de5fc035bbfaeacee95cb",
+    "agent_visible/train/tasks.jsonl": "03d1db8f816b12a0fb84a5cda9775e8fe60700d2f23da0a9f2ec8fb9eedecf3b",
+    "agent_visible/val/environments/1949917582656e768ca92fa71ef11cc1.json": "463dc7d58a064a396e8a2334ed70cc3c9f1c236af7b56b7f64c9268bf3aad9b9",
+    "agent_visible/val/environments/2c91275e6056260c40b22f85ecbb04ea.json": "867a58fc8dfa1f25274aa8944943b39db0bf873e70d511763569c98cf095d725",
+    "agent_visible/val/environments/2cfa77448575c24e573c714e544045e1.json": "e5e167054aa4c66942ac510f45f9d6dd50e42075ac23aef2916e89fd2fb9c8ed",
+    "agent_visible/val/environments/2d2b2a056d61b011ab17d8d09b0ae9dc.json": "a5085d6b248079e9134085c89b0332dc87f255a6e335de2a2f041c25fea0234a",
+    "agent_visible/val/environments/76d91fd1f895e61dcd0b65b982303661.json": "84db42aa27ee80ddb050982b80b75e33bb7e7c52087006b7cbd50bf497e77d0c",
+    "agent_visible/val/environments/7aa1658583b0fc9c4703cdc8611ccfa7.json": "ebe58436212b0e1c5366bccc5c5cff04a89610055b08285229ab4a0587e6fc5e",
+    "agent_visible/val/environments/b759dcc8ef614bf402eba33b77773812.json": "1e889ffe5198d47114f6e85c96b6619dc056c55bde5a97fad1505b56e50049b9",
+    "agent_visible/val/environments/c591f75e4c268fdf043adf823556e84a.json": "ac1f693c25ed4a0633f3bb883190bc6567b954409ef160b460ba8053f27de762",
+    "agent_visible/val/environments/cbc8d902d0216fe632d747a6b0587811.json": "ecfdf5be11e897558279be33a9b40cb991506eb1cdf11179d7bd93066a8fa6a8",
+    "agent_visible/val/environments/e6fd05ec4d90eef6f724f9426bd9f175.json": "57ea3c79357909109f94a285731ff452572aa4b0d56582c5e82a70b960b5e4b1",
+    "agent_visible/val/environments/ee6b5e610c9e507d3c5f160a5ed0d771.json": "2e36896fb6e10678e03e7567c324a25c8f91bfa2df40ae3fdda5445c6dde1023",
+    "agent_visible/val/environments/ff4a40541d73e5be71d87bb4f43a38c1.json": "8518dfda6a0834a8c67ead92c75f36e8e637aeaf2df6822260eedd53aac5b3ac",
+    "agent_visible/val/tasks.jsonl": "4c5dd1e9096d43e461f8b3b5f016a55b9a92270ae289eef5ae0b75774982afa1",
+    "hidden/test/facts.jsonl": "3fa2974ca949228e546638ea5f95bcf1597a3c6c9890399dfa9e0bb5008ddb75",
+    "hidden/test/ground_truth.jsonl": "718725c677e449829ece5683a053e8691d30aeeefe4dc0fe0107b97e4f014f75",
+    "hidden/test/source_assignments.jsonl": "ea7e32d8b00af6c98bb943971b0a86b4dad1cfa4efdcfc36d5ff7903ddfb8e55",
+    "hidden/train/facts.jsonl": "18e6e73771ea05d883f693afc20d2a3478a50bbbfbfc7f49251ebd74486f6d26",
+    "hidden/train/ground_truth.jsonl": "13a83e4d733f58911421d55c8be1a8845226863693992405a036ee1c30c9a41e",
+    "hidden/train/source_assignments.jsonl": "8a36af6c46e2a0a8d1d07a1dd0ae084d02515220ea5f921e77fa8fa5697dc5b0",
+    "hidden/val/facts.jsonl": "0019eb0a34737382ab3b0a3a8475dee3e1bee4c2b2021d20a18aab3cd4bad70f",
+    "hidden/val/ground_truth.jsonl": "83ffd00a3b89f7a68b8bbce31da02ab6a7b04f64b2a4f4262c65fc1985b1b944",
+    "hidden/val/source_assignments.jsonl": "3c6e4563790e0712d43877c5acf25e627b3c1c0ceeda2c54f6dc6fa2ce01a277"
+  },
+  "python": "3.13.12",
+  "rule_version": "brl-reconciliation-v1",
+  "seed": 20261124,
+  "source": {
+    "dataset_page": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+    "errors": [],
+    "files": {
+      "customers": {
+        "bytes": 9033957,
+        "download_payload_sha256": "7c928c72b87e51ca712447aa2f94324dad95161a24c154106453074a88d61778",
+        "filename": "olist_customers_dataset.csv",
+        "git_blob_sha1": "1e7c3f923dede48035a8637dd28c357e154e5e75",
+        "mirror_commit": null,
+        "requested_url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce/olist_customers_dataset.csv",
+        "resolved_url": "https://storage.googleapis.com:443/kaggle-data-sets/55151/2669146/compressed/olist_customers_dataset.csv.zip",
+        "rows": 99441,
+        "sha256": "983a422239e1712ded753b3bf9ecf47dc73f144d306029dcfa99e70a226883d2",
+        "transport": "kaggle_public_api"
+      },
+      "items": {
+        "bytes": 15438671,
+        "download_payload_sha256": "02d4500597b8ae0a798bbfccf4f49b5f5db12537b5085c0a08613cecbd7070c0",
+        "filename": "olist_order_items_dataset.csv",
+        "git_blob_sha1": "dbdec13793b96ea5c00441f70d129d471c29bfda",
+        "mirror_commit": null,
+        "requested_url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce/olist_order_items_dataset.csv",
+        "resolved_url": "https://storage.googleapis.com:443/kaggle-data-sets/55151/2669146/compressed/olist_order_items_dataset.csv.zip",
+        "rows": 112650,
+        "sha256": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+        "transport": "kaggle_public_api"
+      },
+      "orders": {
+        "bytes": 17654914,
+        "download_payload_sha256": "3fbb7ac9469098e4e216f3b555d3aa1de543266fd1bcccb5a8c02d6240025692",
+        "filename": "olist_orders_dataset.csv",
+        "git_blob_sha1": "8133513ba3bcf576837c47aedd7fd81c5bb110fc",
+        "mirror_commit": null,
+        "requested_url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce/olist_orders_dataset.csv",
+        "resolved_url": "https://storage.googleapis.com:443/kaggle-data-sets/55151/2669146/compressed/olist_orders_dataset.csv.zip",
+        "rows": 99441,
+        "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+        "transport": "kaggle_public_api"
+      },
+      "payments": {
+        "bytes": 5777138,
+        "download_payload_sha256": "9a9898cc2a20802e83737cc91f952103e6eb8da3a10b37a0a43e81749447031c",
+        "filename": "olist_order_payments_dataset.csv",
+        "git_blob_sha1": "b6c294a50fc1470abf2b8b09a33698c46eb6190d",
+        "mirror_commit": null,
+        "requested_url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce/olist_order_payments_dataset.csv",
+        "resolved_url": "https://storage.googleapis.com:443/kaggle-data-sets/55151/2669146/compressed/olist_order_payments_dataset.csv.zip",
+        "rows": 103886,
+        "sha256": "4f713964f2815dbbaa40b9488268c55aac3627bfce5aa96cf58d1f3616de3cc0",
+        "transport": "kaggle_public_api"
+      }
+    },
+    "license": "CC BY-NC-SA 4.0",
+    "license_verified_date": "2026-11-24",
+    "previous_errors": [],
+    "schema_version": "olist-public-files-v1",
+    "upstream_kaggle_version": "unverified"
+  },
+  "source_exclusions": {
+    "inconsistent_amount_or_fields": 573,
+    "missing_join": 1,
+    "not_delivered": 2963
+  },
+  "split_policy": "SHA256(seed:customer_unique_id)%100: train<70,val<80,test otherwise; source order consumed once",
+  "splits": {
+    "test": {
+      "categories": {
+        "basic": 8,
+        "boundary": 8,
+        "cross_tool": 8
+      },
+      "modes": {
+        "period_batch": 11,
+        "single_order": 13
+      },
+      "scenarios": {
+        "ambiguous_amount": 2,
+        "cutoff": 2,
+        "duplicate_event": 2,
+        "multiple_refunds": 2,
+        "normal": 4,
+        "partial_refund": 2,
+        "pending_refund": 2,
+        "recoverable_reference": 2,
+        "refund_cutoff": 1,
+        "refund_observed_cutoff": 1,
+        "split_receipts": 4
+      },
+      "source_orders": 47,
+      "tasks": 24
+    },
+    "train": {
+      "categories": {
+        "basic": 4,
+        "boundary": 4,
+        "cross_tool": 4
+      },
+      "modes": {
+        "period_batch": 5,
+        "single_order": 7
+      },
+      "scenarios": {
+        "ambiguous_amount": 1,
+        "cutoff": 1,
+        "duplicate_event": 1,
+        "multiple_refunds": 1,
+        "normal": 2,
+        "partial_refund": 1,
+        "pending_refund": 1,
+        "recoverable_reference": 1,
+        "refund_cutoff": 1,
+        "split_receipts": 2
+      },
+      "source_orders": 22,
+      "tasks": 12
+    },
+    "val": {
+      "categories": {
+        "basic": 4,
+        "boundary": 4,
+        "cross_tool": 4
+      },
+      "modes": {
+        "period_batch": 5,
+        "single_order": 7
+      },
+      "scenarios": {
+        "ambiguous_amount": 1,
+        "cutoff": 1,
+        "duplicate_event": 1,
+        "multiple_refunds": 1,
+        "normal": 2,
+        "partial_refund": 1,
+        "pending_refund": 1,
+        "recoverable_reference": 1,
+        "refund_cutoff": 1,
+        "split_receipts": 2
+      },
+      "source_orders": 22,
+      "tasks": 12
+    }
+  },
+  "verification": {
+    "cross_split_customer_overlap": 0,
+    "cross_split_source_order_overlap": 0,
+    "output_files_hash_verified": 61,
+    "splits": {
+      "test": {
+        "coverage": {
+          "refund_events": 11,
+          "unique_transactions": 64,
+          "visible_events": 66,
+          "visible_orders": 47
+        },
+        "multi_order_batches_verified": 11,
+        "review_orders": 3,
+        "tasks_verified": 24
+      },
+      "train": {
+        "coverage": {
+          "refund_events": 6,
+          "unique_transactions": 31,
+          "visible_events": 32,
+          "visible_orders": 22
+        },
+        "multi_order_batches_verified": 5,
+        "review_orders": 2,
+        "tasks_verified": 12
+      },
+      "val": {
+        "coverage": {
+          "refund_events": 6,
+          "unique_transactions": 31,
+          "visible_events": 32,
+          "visible_orders": 22
+        },
+        "multi_order_batches_verified": 5,
+        "review_orders": 2,
+        "tasks_verified": 12
+      }
+    },
+    "status": "passed"
+  },
+  "version": "olist-sim-v2"
+}

@@ -1,0 +1,99 @@
+{
+  "audited_at_utc": "2026-11-25T00:28:42.068755+00:00",
+  "primary": {
+    "orders": {
+      "filename": "olist_orders_dataset.csv",
+      "rows": 99441,
+      "bytes": 17654914,
+      "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+      "transport": "kaggle_public_api",
+      "requested_url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce/olist_orders_dataset.csv"
+    },
+    "items": {
+      "filename": "olist_order_items_dataset.csv",
+      "rows": 112650,
+      "bytes": 15438671,
+      "sha256": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+      "transport": "kaggle_public_api",
+      "requested_url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce/olist_order_items_dataset.csv"
+    },
+    "payments": {
+      "filename": "olist_order_payments_dataset.csv",
+      "rows": 103886,
+      "bytes": 5777138,
+      "sha256": "4f713964f2815dbbaa40b9488268c55aac3627bfce5aa96cf58d1f3616de3cc0",
+      "transport": "kaggle_public_api",
+      "requested_url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce/olist_order_payments_dataset.csv"
+    },
+    "customers": {
+      "filename": "olist_customers_dataset.csv",
+      "rows": 99441,
+      "bytes": 9033957,
+      "sha256": "983a422239e1712ded753b3bf9ecf47dc73f144d306029dcfa99e70a226883d2",
+      "transport": "kaggle_public_api",
+      "requested_url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce/olist_customers_dataset.csv"
+    }
+  },
+  "mirror": {
+    "orders": {
+      "filename": "olist_orders_dataset.csv",
+      "rows": 99441,
+      "bytes": 17406884,
+      "sha256": "5dee2a037a7a915ed63f88b09c781f1eec99dc3c84e73154f580f4a17d46046d",
+      "transport": "github_commit_pinned_mirror",
+      "requested_url": "https://raw.githubusercontent.com/cstuer/olist-ecommerce-analysis/21baca68a891817e8370b832273ba62d05a3d719/raw/olist_orders_dataset.csv"
+    },
+    "items": {
+      "filename": "olist_order_items_dataset.csv",
+      "rows": 112650,
+      "bytes": 15438671,
+      "sha256": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+      "transport": "github_commit_pinned_mirror",
+      "requested_url": "https://raw.githubusercontent.com/cstuer/olist-ecommerce-analysis/21baca68a891817e8370b832273ba62d05a3d719/raw/olist_order_items_dataset.csv"
+    },
+    "payments": {
+      "filename": "olist_order_payments_dataset.csv",
+      "rows": 103886,
+      "bytes": 5777138,
+      "sha256": "4f713964f2815dbbaa40b9488268c55aac3627bfce5aa96cf58d1f3616de3cc0",
+      "transport": "github_commit_pinned_mirror",
+      "requested_url": "https://raw.githubusercontent.com/cstuer/olist-ecommerce-analysis/21baca68a891817e8370b832273ba62d05a3d719/raw/olist_order_payments_dataset.csv"
+    },
+    "customers": {
+      "filename": "olist_customers_dataset.csv",
+      "rows": 99441,
+      "bytes": 9033957,
+      "sha256": "983a422239e1712ded753b3bf9ecf47dc73f144d306029dcfa99e70a226883d2",
+      "transport": "github_commit_pinned_mirror",
+      "requested_url": "https://raw.githubusercontent.com/cstuer/olist-ecommerce-analysis/21baca68a891817e8370b832273ba62d05a3d719/raw/olist_customers_dataset.csv"
+    }
+  },
+  "comparison": {
+    "orders": {
+      "byte_identical": false,
+      "csv_rows_identical_ignoring_order": true,
+      "primary_only_rows": 0,
+      "mirror_only_rows": 0
+    },
+    "items": {
+      "byte_identical": true,
+      "csv_rows_identical_ignoring_order": true,
+      "primary_only_rows": 0,
+      "mirror_only_rows": 0
+    },
+    "payments": {
+      "byte_identical": true,
+      "csv_rows_identical_ignoring_order": true,
+      "primary_only_rows": 0,
+      "mirror_only_rows": 0
+    },
+    "customers": {
+      "byte_identical": true,
+      "csv_rows_identical_ignoring_order": true,
+      "primary_only_rows": 0,
+      "mirror_only_rows": 0
+    }
+  },
+  "status": "passed",
+  "meaning": "校验本地载荷与下载清单；内容比较不推断未知上游版本号。"
+}

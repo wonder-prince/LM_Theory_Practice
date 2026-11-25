@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2670" viewBox="0 0 1800 2670" role="img"><title>订单—收款—退款对账业务流程</title><rect width="100%" height="100%" fill="white"/>
+<text x="900" y="55.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="38" fill="#0C447C">订单—收款—退款对账 Agent：业务分支流程</text>
+<text x="900" y="105.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="23" fill="#607587">已确认设计 · 2026-11-25 · 所有补查均受预算约束，预算耗尽即转待复核</text>
+<polyline points="650,215 650,265" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,265 642.808616920937,251.8362615716444 657.191383079063,251.8362615716444" fill="#607587"/>
+<polyline points="900,320 1190,320" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1190,320 1176.8362615716444,327.19138307906303 1176.8362615716444,312.80861692093697" fill="#607587"/>
+<rect x="1021" y="282" width="38" height="33" fill="white"/>
+<text x="1040" y="298.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">否</text>
+<polyline points="1400,270 1400,230 940,230 940,320 900,320" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="900,320 913.1637384283556,312.80861692093697 913.1637384283556,327.19138307906303" fill="#607587"/>
+<rect x="1057" y="213" width="126" height="34" fill="white"/>
+<text x="1120" y="230.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">补充后重判</text>
+<polyline points="650,375 650,425" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,425 642.808616920937,411.8362615716444 657.191383079063,411.8362615716444" fill="#607587"/>
+<rect x="656" y="384" width="38" height="33" fill="white"/>
+<text x="675" y="400.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">是</text>
+<polyline points="650,515 650,570" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,570 642.808616920937,556.8362615716444 657.191383079063,556.8362615716444" fill="#607587"/>
+<polyline points="900,625 1190,625" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1190,625 1176.8362615716444,632.191383079063 1176.8362615716444,617.808616920937" fill="#607587"/>
+<rect x="1021" y="586" width="38" height="33" fill="white"/>
+<text x="1040" y="602.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">否</text>
+<polyline points="650,680 650,745" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,745 642.808616920937,731.8362615716444 657.191383079063,731.8362615716444" fill="#607587"/>
+<rect x="656" y="696" width="38" height="33" fill="white"/>
+<text x="675" y="712.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">是</text>
+<polyline points="650,835 650,900" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,900 642.808616920937,886.8362615716444 657.191383079063,886.8362615716444" fill="#607587"/>
+<polyline points="900,960 1190,960" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1190,960 1176.8362615716444,967.191383079063 1176.8362615716444,952.808616920937" fill="#607587"/>
+<rect x="922" y="917" width="236" height="36" fill="white"/>
+<text x="1040" y="935.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">缺引用 / 无结果 / 冲突</text>
+<polyline points="650,1020 650,1130" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,1130 642.808616920937,1116.8362615716444 657.191383079063,1116.8362615716444" fill="#607587"/>
+<rect x="656" y="1044" width="38" height="33" fill="white"/>
+<text x="675" y="1060.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">是</text>
+<polyline points="1400,1010 1400,1070" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1400,1070 1392.8086169209369,1056.8362615716444 1407.1913830790631,1056.8362615716444" fill="#607587"/>
+<polyline points="1190,1135 1100,1135 1100,1100 650,1100 650,1130" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,1130 642.808616920937,1116.8362615716444 657.191383079063,1116.8362615716444" fill="#607587"/>
+<rect x="979" y="1083" width="82" height="34" fill="white"/>
+<text x="1020" y="1100.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">能确认</text>
+<polyline points="1610,1135 1720,1135 1720,960 1610,960" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1610,960 1623.1637384283556,952.808616920937 1623.1637384283556,967.191383079063" fill="#607587"/>
+<rect x="1492" y="1028" width="236" height="35" fill="white"/>
+<text x="1610" y="1045.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">有证据可查且预算允许</text>
+<polyline points="1400,1200 1400,1265" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1400,1265 1392.8086169209369,1251.8362615716444 1407.1913830790631,1251.8362615716444" fill="#607587"/>
+<rect x="1383" y="1212" width="214" height="36" fill="white"/>
+<text x="1490" y="1230.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">无法确认 / 预算耗尽</text>
+<polyline points="650,1220 650,1275" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,1275 642.808616920937,1261.8362615716444 657.191383079063,1261.8362615716444" fill="#607587"/>
+<polyline points="900,1330 1135,1330 1135,1040 1230,1040 1230,1010" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1230,1010 1237.1913830790631,1023.1637384283556 1222.8086169209369,1023.1637384283556" fill="#607587"/>
+<rect x="976" y="1278" width="148" height="35" fill="white"/>
+<text x="1050" y="1295.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">有冲突：补查</text>
+<polyline points="650,1385 650,1450" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,1450 642.808616920937,1436.8362615716444 657.191383079063,1436.8362615716444" fill="#607587"/>
+<rect x="669" y="1401" width="82" height="35" fill="white"/>
+<text x="710" y="1418.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">无冲突</text>
+<polyline points="650,1550 650,1610" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,1610 642.808616920937,1596.8362615716444 657.191383079063,1596.8362615716444" fill="#607587"/>
+<polyline points="900,1670 1190,1670" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1190,1670 1176.8362615716444,1677.1913830790631 1176.8362615716444,1662.8086169209369" fill="#607587"/>
+<rect x="955" y="1627" width="170" height="36" fill="white"/>
+<text x="1040" y="1645.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">关联 / 状态不明</text>
+<polyline points="1400,1620 1400,1580 950,1580 950,1500 910,1500" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="910,1500 923.1637384283556,1492.8086169209369 923.1637384283556,1507.1913830790631" fill="#607587"/>
+<rect x="1035" y="1563" width="170" height="35" fill="white"/>
+<text x="1120" y="1580.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">取得证据，重查</text>
+<polyline points="1400,1720 1400,1810" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1400,1810 1392.8086169209369,1796.8362615716444 1407.1913830790631,1796.8362615716444" fill="#607587"/>
+<rect x="1383" y="1747" width="214" height="36" fill="white"/>
+<text x="1490" y="1765.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">无法查明 / 预算耗尽</text>
+<polyline points="650,1730 650,1810" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,1810 642.808616920937,1796.8362615716444 657.191383079063,1796.8362615716444" fill="#607587"/>
+<rect x="680" y="1752" width="170" height="36" fill="white"/>
+<text x="765" y="1770.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">明确，或无退款</text>
+<polyline points="650,1930 650,2095" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="650,2095 642.808616920937,2081.8362615716446 657.191383079063,2081.8362615716446" fill="#607587"/>
+<polyline points="1400,1930 1400,2095" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1400,2095 1392.8086169209369,2081.8362615716446 1407.1913830790631,2081.8362615716446" fill="#607587"/>
+<polyline points="1610,1320 1750,1320 1750,2010 1470,2010 1470,2095" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1470,2095 1462.8086169209369,2081.8362615716446 1477.1913830790631,2081.8362615716446" fill="#607587"/>
+<polyline points="1025,2205 1025,2260" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1025,2260 1017.808616920937,2246.8362615716446 1032.1913830790631,2246.8362615716446" fill="#607587"/>
+<polyline points="775,2320 250,2320 250,790 390,790" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="390,790 376.8362615716444,797.191383079063 376.8362615716444,782.808616920937" fill="#607587"/>
+<rect x="99" y="2007" width="302" height="36" fill="white"/>
+<text x="250" y="2025.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">遗漏 / 归属冲突：返回查流水</text>
+<polyline points="775,2320 340,2320 340,1870 390,1870" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="390,1870 376.8362615716444,1877.1913830790631 376.8362615716444,1862.8086169209369" fill="#607587"/>
+<rect x="416" y="2268" width="258" height="35" fill="white"/>
+<text x="545" y="2285.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">金额处理错误：重新核算</text>
+<polyline points="1025,2380 1025,2530" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1025,2530 1017.808616920937,2516.8362615716446 1032.1913830790631,2516.8362615716446" fill="#607587"/>
+<rect x="1030" y="2452" width="60" height="35" fill="white"/>
+<text x="1060" y="2470.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">通过</text>
+<polyline points="1275,2320 1400,2320 1400,2390" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1400,2390 1392.8086169209369,2376.8362615716446 1407.1913830790631,2376.8362615716446" fill="#607587"/>
+<rect x="1353" y="2337" width="214" height="36" fill="white"/>
+<text x="1460" y="2355.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="22" fill="#607587">无法修复 / 预算耗尽</text>
+<polyline points="1400,2490 1400,2530" fill="none" stroke="#607587" stroke-width="3"/>
+<polygon points="1400,2530 1392.8086169209369,2516.8362615716446 1407.1913830790631,2516.8362615716446" fill="#607587"/>
+<rect x="390.0" y="135.0" width="520" height="80" rx="20" fill="#E6F1FB" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="175.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">开始：单订单核查 / 账期对账</text>
+<polygon points="650,265.0 900.0,320 650,375.0 400.0,320" fill="white" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="320.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">范围与截止时点明确？</text>
+<rect x="1190.0" y="270.0" width="420" height="100" rx="20" fill="#FAEEDA" stroke="#854F0B" stroke-width="2"/>
+<text x="1400" y="302.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">澄清订单号、账期、截止时点</text>
+<text x="1400" y="337.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">等待用户补充</text>
+<rect x="390.0" y="425.0" width="520" height="90" rx="20" fill="#E6F1FB" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="452.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">查询订单 query_orders</text>
+<text x="650" y="487.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">取得应收、币种与参考号</text>
+<polygon points="650,570.0 900.0,625 650,680.0 400.0,625" fill="white" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="625.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">查到目标订单？</text>
+<rect x="1190.0" y="575.0" width="420" height="100" rx="20" fill="#FAEEDA" stroke="#854F0B" stroke-width="2"/>
+<text x="1400" y="607.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">说明未查到订单</text>
+<text x="1400" y="642.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">结束，或由用户修正范围</text>
+<rect x="390.0" y="745.0" width="520" height="90" rx="20" fill="#E6F1FB" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="772.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">筛选收款 search_receipts</text>
+<text x="650" y="807.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">优先按参考号检索</text>
+<polygon points="650,900.0 900.0,960 650,1020.0 400.0,960" fill="white" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="942.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">参考号归属明确</text>
+<text x="650" y="977.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">且证据一致？</text>
+<rect x="1190.0" y="910.0" width="420" height="100" rx="20" fill="#FAEEDA" stroke="#854F0B" stroke-width="2"/>
+<text x="1400" y="942.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">检索候选关联，补查交易凭证</text>
+<text x="1400" y="977.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">核对交易号、商户参考号等</text>
+<polygon points="1400,1070.0 1610.0,1135 1400,1200.0 1190.0,1135" fill="white" stroke="#185FA5" stroke-width="2"/>
+<text x="1400" y="1135.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">证据足够唯一确认？</text>
+<rect x="1190.0" y="1265.0" width="420" height="110" rx="20" fill="#FAEEDA" stroke="#854F0B" stroke-width="2"/>
+<text x="1400" y="1302.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">保留候选，不分配争议流水</text>
+<text x="1400" y="1337.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">列出需补查的具体字段</text>
+<rect x="390.0" y="1130.0" width="520" height="90" rx="20" fill="#E6F1FB" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="1157.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">确认关联，检查重复通知</text>
+<text x="650" y="1192.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">check_duplicate_events</text>
+<polygon points="650,1275.0 900.0,1330 650,1385.0 400.0,1330" fill="white" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="1330.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">存在冲突通知？</text>
+<rect x="390.0" y="1450.0" width="520" height="100" rx="20" fill="#E6F1FB" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="1482.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">汇总独立分笔收款，查询退款</text>
+<text x="650" y="1517.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">query_refunds：按原支付交易关联</text>
+<polygon points="650,1610.0 900.0,1670 650,1730.0 400.0,1670" fill="white" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="1652.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">退款关联与状态明确？</text>
+<text x="650" y="1687.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">查明无退款也可继续</text>
+<rect x="1190.0" y="1620.0" width="420" height="100" rx="20" fill="#FAEEDA" stroke="#854F0B" stroke-width="2"/>
+<text x="1400" y="1652.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">补查原支付及退款凭证</text>
+<text x="1400" y="1687.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">仅使用可见业务证据</text>
+<rect x="390.0" y="1810.0" width="520" height="120" rx="20" fill="#E6F1FB" stroke="#185FA5" stroke-width="2"/>
+<text x="650" y="1835.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">按截止时点有效且已观察的记录核算</text>
+<text x="650" y="1870.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">成功退款扣净收；处理中退款单列</text>
+<text x="650" y="1905.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">分别判断收款是否齐全与退款后净收</text>
+<rect x="1190.0" y="1810.0" width="420" height="120" rx="20" fill="#FAEEDA" stroke="#854F0B" stroke-width="2"/>
+<text x="1400" y="1835.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">该项列为待复核</text>
+<text x="1400" y="1870.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">保留已确认金额</text>
+<text x="1400" y="1905.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">说明不确定部分与所缺证据</text>
+<rect x="440.0" y="2095.0" width="1170" height="110" rx="20" fill="#E6F1FB" stroke="#185FA5" stroke-width="2"/>
+<text x="1025" y="2132.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">汇集各订单结果，整批复核 validate_reconciliation</text>
+<text x="1025" y="2167.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">检查遗漏订单 / 流水、重复占用、金额及证据；单项异常不阻塞其他订单</text>
+<polygon points="1025,2260.0 1275.0,2320 1025,2380.0 775.0,2320" fill="white" stroke="#185FA5" stroke-width="2"/>
+<text x="1025" y="2320.0" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">整批复核通过？</text>
+<rect x="1190.0" y="2390.0" width="420" height="100" rx="20" fill="#FAEEDA" stroke="#854F0B" stroke-width="2"/>
+<text x="1400" y="2422.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">标记未完成项及原因</text>
+<text x="1400" y="2457.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#633806">不宣称整批已核对通过</text>
+<rect x="440.0" y="2530.0" width="1170" height="100" rx="20" fill="#E6F1FB" stroke="#185FA5" stroke-width="2"/>
+<text x="1025" y="2562.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">输出：已匹配清单 · 差异清单 · 待复核清单</text>
+<text x="1025" y="2597.5" text-anchor="middle" dominant-baseline="central" font-family="Heiti SC, PingFang SC, sans-serif" font-size="25" fill="#0C447C">附订单、流水与退款证据，以及需要补查的字段</text>
+</svg>

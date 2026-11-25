@@ -1,0 +1,286 @@
+{
+  "kind": "deterministic_rule_script_demo",
+  "model_connected": false,
+  "calls": [
+    {
+      "tool": "query_orders",
+      "arguments": {},
+      "result": {
+        "ok": true,
+        "data": {
+          "orders": [
+            {
+              "created_at": "2018-01-14T21:10:49-03:00",
+              "currency": "BRL",
+              "customer_reference": "e0a3a91f2346cc13fc27ed12b10877a9",
+              "expected_cents": 10697,
+              "merchant_reference": "f1260ebc7d56ab567714dc919b27dbdf",
+              "order_id": "cbf27734ac1035250b66402800e03d2c",
+              "source_payment_attributes": [
+                {
+                  "payment_installments": 1,
+                  "payment_type": "boleto"
+                }
+              ]
+            }
+          ],
+          "scope": {
+            "mode": "single_order",
+            "order_id": "cbf27734ac1035250b66402800e03d2c",
+            "cutoff": "2018-01-24T21:10:49-03:00"
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "tool": "search_receipts",
+      "arguments": {},
+      "result": {
+        "ok": true,
+        "data": {
+          "events": [
+            {
+              "amount_cents": 10697,
+              "currency": "BRL",
+              "effective_at": "2018-01-22T21:10:49-03:00",
+              "event_id": "3f0c9931918c40bfd670c342c6cce996",
+              "kind": "receipt",
+              "merchant_reference": "f1260ebc7d56ab567714dc919b27dbdf",
+              "observed_at": "2018-01-22T21:10:49-03:00",
+              "order_id": "cbf27734ac1035250b66402800e03d2c",
+              "original_transaction_id": null,
+              "status": "success",
+              "transaction_id": "6caf76a5703598aec280ad3729a6f2e7"
+            }
+          ],
+          "cutoff": "2018-01-24T21:10:49-03:00"
+        },
+        "error": null
+      }
+    },
+    {
+      "tool": "check_duplicate_events",
+      "arguments": {
+        "transaction_ids": [
+          "6caf76a5703598aec280ad3729a6f2e7"
+        ]
+      },
+      "result": {
+        "ok": true,
+        "data": {
+          "groups": [
+            {
+              "transaction_id": "6caf76a5703598aec280ad3729a6f2e7",
+              "status": "consistent",
+              "kept_event_id": "3f0c9931918c40bfd670c342c6cce996",
+              "duplicate_event_ids": []
+            }
+          ]
+        },
+        "error": null
+      }
+    },
+    {
+      "tool": "find_match_candidates",
+      "arguments": {
+        "transaction_id": "6caf76a5703598aec280ad3729a6f2e7"
+      },
+      "result": {
+        "ok": true,
+        "data": {
+          "transaction_id": "6caf76a5703598aec280ad3729a6f2e7",
+          "candidates": [
+            {
+              "order_id": "cbf27734ac1035250b66402800e03d2c",
+              "evidence_fields": [
+                "order_id",
+                "merchant_reference"
+              ],
+              "amount_equal": true,
+              "strong": true,
+              "in_scope": true
+            }
+          ],
+          "conflicts": [],
+          "amount_is_strong_evidence": false
+        },
+        "error": null
+      }
+    },
+    {
+      "tool": "get_transaction_evidence",
+      "arguments": {
+        "transaction_id": "6caf76a5703598aec280ad3729a6f2e7"
+      },
+      "result": {
+        "ok": true,
+        "data": {
+          "transaction": {
+            "amount_cents": 10697,
+            "currency": "BRL",
+            "effective_at": "2018-01-22T21:10:49-03:00",
+            "event_id": "3f0c9931918c40bfd670c342c6cce996",
+            "kind": "receipt",
+            "merchant_reference": "f1260ebc7d56ab567714dc919b27dbdf",
+            "observed_at": "2018-01-22T21:10:49-03:00",
+            "order_id": "cbf27734ac1035250b66402800e03d2c",
+            "original_transaction_id": null,
+            "status": "success",
+            "transaction_id": "6caf76a5703598aec280ad3729a6f2e7"
+          },
+          "events": [
+            {
+              "amount_cents": 10697,
+              "currency": "BRL",
+              "effective_at": "2018-01-22T21:10:49-03:00",
+              "event_id": "3f0c9931918c40bfd670c342c6cce996",
+              "kind": "receipt",
+              "merchant_reference": "f1260ebc7d56ab567714dc919b27dbdf",
+              "observed_at": "2018-01-22T21:10:49-03:00",
+              "order_id": "cbf27734ac1035250b66402800e03d2c",
+              "original_transaction_id": null,
+              "status": "success",
+              "transaction_id": "6caf76a5703598aec280ad3729a6f2e7"
+            }
+          ],
+          "missing_fields": [],
+          "supplement_request": {
+            "transaction_id": "6caf76a5703598aec280ad3729a6f2e7",
+            "requested_fields": [],
+            "instruction": ""
+          }
+        },
+        "error": null
+      }
+    },
+    {
+      "tool": "query_refunds",
+      "arguments": {
+        "order_id": "cbf27734ac1035250b66402800e03d2c"
+      },
+      "result": {
+        "ok": true,
+        "data": {
+          "events": []
+        },
+        "error": null
+      }
+    },
+    {
+      "tool": "calculate_reconciliation",
+      "arguments": {
+        "order_id": "cbf27734ac1035250b66402800e03d2c",
+        "receipt_ids": [
+          "6caf76a5703598aec280ad3729a6f2e7"
+        ],
+        "refund_ids": []
+      },
+      "result": {
+        "ok": true,
+        "data": {
+          "order_id": "cbf27734ac1035250b66402800e03d2c",
+          "expected_cents": 10697,
+          "received_cents": 10697,
+          "refunded_cents": 0,
+          "pending_refund_cents": 0,
+          "net_cents": 10697,
+          "collection_gap_cents": 0,
+          "net_vs_original_cents": 0,
+          "receipt_ids": [
+            "6caf76a5703598aec280ad3729a6f2e7"
+          ],
+          "refund_ids": [],
+          "pending_refund_ids": [],
+          "evidence_event_ids": [
+            "3f0c9931918c40bfd670c342c6cce996"
+          ]
+        },
+        "error": null
+      }
+    },
+    {
+      "tool": "validate_reconciliation",
+      "arguments": {
+        "plan": {
+          "orders": [
+            {
+              "order_id": "cbf27734ac1035250b66402800e03d2c",
+              "receipt_ids": [
+                "6caf76a5703598aec280ad3729a6f2e7"
+              ],
+              "refund_ids": [],
+              "balance": {
+                "order_id": "cbf27734ac1035250b66402800e03d2c",
+                "expected_cents": 10697,
+                "received_cents": 10697,
+                "refunded_cents": 0,
+                "pending_refund_cents": 0,
+                "net_cents": 10697,
+                "collection_gap_cents": 0,
+                "net_vs_original_cents": 0,
+                "receipt_ids": [
+                  "6caf76a5703598aec280ad3729a6f2e7"
+                ],
+                "refund_ids": [],
+                "pending_refund_ids": [],
+                "evidence_event_ids": [
+                  "3f0c9931918c40bfd670c342c6cce996"
+                ]
+              },
+              "review": false,
+              "review_reason": "",
+              "missing_fields": []
+            }
+          ],
+          "unallocated_transaction_ids": []
+        }
+      },
+      "result": {
+        "ok": true,
+        "data": {
+          "valid": true,
+          "errors": []
+        },
+        "error": null
+      }
+    }
+  ],
+  "plan": {
+    "orders": [
+      {
+        "order_id": "cbf27734ac1035250b66402800e03d2c",
+        "receipt_ids": [
+          "6caf76a5703598aec280ad3729a6f2e7"
+        ],
+        "refund_ids": [],
+        "balance": {
+          "order_id": "cbf27734ac1035250b66402800e03d2c",
+          "expected_cents": 10697,
+          "received_cents": 10697,
+          "refunded_cents": 0,
+          "pending_refund_cents": 0,
+          "net_cents": 10697,
+          "collection_gap_cents": 0,
+          "net_vs_original_cents": 0,
+          "receipt_ids": [
+            "6caf76a5703598aec280ad3729a6f2e7"
+          ],
+          "refund_ids": [],
+          "pending_refund_ids": [],
+          "evidence_event_ids": [
+            "3f0c9931918c40bfd670c342c6cce996"
+          ]
+        },
+        "review": false,
+        "review_reason": "",
+        "missing_fields": []
+      }
+    ],
+    "unallocated_transaction_ids": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

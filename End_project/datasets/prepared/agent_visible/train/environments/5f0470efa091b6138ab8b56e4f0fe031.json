@@ -1,0 +1,47 @@
+{
+  "events": [
+    {
+      "amount_cents": 8138,
+      "currency": "BRL",
+      "effective_at": "2017-12-14T10:58:54-03:00",
+      "event_id": "c2a7dfdb37749a2f7831ed12caf2c5e7",
+      "kind": "refund",
+      "merchant_reference": null,
+      "observed_at": "2017-12-14T10:58:54-03:00",
+      "order_id": null,
+      "original_transaction_id": "d24c499c4bb32762fadfd9019f89f16a",
+      "status": "pending",
+      "transaction_id": "ea4535f5e5304d768bcb4414f26c3f02"
+    },
+    {
+      "amount_cents": 24415,
+      "currency": "BRL",
+      "effective_at": "2017-12-13T10:58:54-03:00",
+      "event_id": "4c3ea6dbd603037de3611ff47d15cb34",
+      "kind": "receipt",
+      "merchant_reference": "0346e3cc6df97f754bf5331a533b9932",
+      "observed_at": "2017-12-13T10:58:54-03:00",
+      "order_id": "d1759688be5701807dc17d0608cbc12a",
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "d24c499c4bb32762fadfd9019f89f16a"
+    }
+  ],
+  "orders": [
+    {
+      "created_at": "2017-12-05T10:58:54-03:00",
+      "currency": "BRL",
+      "customer_reference": "1a7ae833d5701631eb3a2a4c862e2e79",
+      "expected_cents": 24415,
+      "merchant_reference": "0346e3cc6df97f754bf5331a533b9932",
+      "order_id": "d1759688be5701807dc17d0608cbc12a",
+      "source_payment_attributes": [
+        {
+          "payment_installments": 1,
+          "payment_type": "boleto"
+        }
+      ]
+    }
+  ],
+  "schema_version": "olist-sim-v2"
+}

@@ -1,0 +1,64 @@
+{
+  "events": [
+    {
+      "amount_cents": 13838,
+      "currency": "BRL",
+      "effective_at": "2018-03-31T15:26:14-03:00",
+      "event_id": "6b3526ed1a202ec51f9ef021e5b8ec1b",
+      "kind": "refund",
+      "merchant_reference": null,
+      "observed_at": "2018-03-31T15:26:14-03:00",
+      "order_id": null,
+      "original_transaction_id": "d6ac2d66e49672c7a7c15161f0213c67",
+      "status": "success",
+      "transaction_id": "4c266720c98ee26db890cec132c4a4b2"
+    },
+    {
+      "amount_cents": 18450,
+      "currency": "BRL",
+      "effective_at": "2018-03-31T15:26:13-03:00",
+      "event_id": "abfe0c7546750a425e00b4c5134ca833",
+      "kind": "refund",
+      "merchant_reference": null,
+      "observed_at": "2018-03-31T15:26:13-03:00",
+      "order_id": null,
+      "original_transaction_id": "d6ac2d66e49672c7a7c15161f0213c67",
+      "status": "success",
+      "transaction_id": "e426b29bb252806fc91ff9ac3350f58e"
+    },
+    {
+      "amount_cents": 55352,
+      "currency": "BRL",
+      "effective_at": "2018-03-29T15:26:13-03:00",
+      "event_id": "edeaf67b0618d5d59381c4b73c0da11d",
+      "kind": "receipt",
+      "merchant_reference": "0b91cde621c4d681a43837f155553cef",
+      "observed_at": "2018-03-29T15:26:13-03:00",
+      "order_id": "825bc6839fe44550b0c2ea6fd1ad6c0a",
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "d6ac2d66e49672c7a7c15161f0213c67"
+    }
+  ],
+  "orders": [
+    {
+      "created_at": "2018-03-21T15:26:13-03:00",
+      "currency": "BRL",
+      "customer_reference": "362a3db8b13e5f3c172080f97770d784",
+      "expected_cents": 55352,
+      "merchant_reference": "0b91cde621c4d681a43837f155553cef",
+      "order_id": "825bc6839fe44550b0c2ea6fd1ad6c0a",
+      "source_payment_attributes": [
+        {
+          "payment_installments": 1,
+          "payment_type": "voucher"
+        },
+        {
+          "payment_installments": 1,
+          "payment_type": "credit_card"
+        }
+      ]
+    }
+  ],
+  "schema_version": "olist-sim-v2"
+}

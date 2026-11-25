@@ -1,0 +1,101 @@
+{
+  "events": [
+    {
+      "amount_cents": 1184,
+      "currency": "BRL",
+      "effective_at": "2018-03-11T18:57:38-03:00",
+      "event_id": "89b36980b3f46f8c314213b7d9799d55",
+      "kind": "receipt",
+      "merchant_reference": "31515040255994120f3c8b83c2d66be0",
+      "observed_at": "2018-03-11T18:57:38-03:00",
+      "order_id": "5c93a8b7c8d4b6ec730243d294fdd4e5",
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "66c331b6257b6c879eb5d327d4ea6c6b"
+    },
+    {
+      "amount_cents": 1184,
+      "currency": "BRL",
+      "effective_at": "2018-03-11T19:57:38-03:00",
+      "event_id": "526813c1798588a8eceea7ef5299d31a",
+      "kind": "receipt",
+      "merchant_reference": "31515040255994120f3c8b83c2d66be0",
+      "observed_at": "2018-03-11T19:57:38-03:00",
+      "order_id": "5c93a8b7c8d4b6ec730243d294fdd4e5",
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "71c1f8cf182911c8beed7499abbee5b7"
+    },
+    {
+      "amount_cents": 3777,
+      "currency": "BRL",
+      "effective_at": "2018-03-11T18:57:38-03:00",
+      "event_id": "f54b346852dbdd1cf9967d0ae16e0b99",
+      "kind": "receipt",
+      "merchant_reference": "dd2feb999f31adae7d97ec7ea06e74cc",
+      "observed_at": "2018-03-11T18:57:38-03:00",
+      "order_id": "009e2e8a0ec1964f04486b955cc245c6",
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "c4479d4d43bc29cea95422e7353e667e"
+    },
+    {
+      "amount_cents": 32930,
+      "currency": "BRL",
+      "effective_at": "2018-03-11T18:57:38-03:00",
+      "event_id": "1c0e0830fa28da3714cccba5c7f885e8",
+      "kind": "receipt",
+      "merchant_reference": "b985ea954efb889c576c9601be1a8c43",
+      "observed_at": "2018-03-11T18:57:38-03:00",
+      "order_id": "61d2fdf2504d74c3b8cd660d75be2e12",
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "cc552964fa590cb29feb8bb79cbb70d5"
+    }
+  ],
+  "orders": [
+    {
+      "created_at": "2017-12-30T14:00:04-03:00",
+      "currency": "BRL",
+      "customer_reference": "2e9ac22e32339c3918b0a7d2d0f057b7",
+      "expected_cents": 2368,
+      "merchant_reference": "31515040255994120f3c8b83c2d66be0",
+      "order_id": "5c93a8b7c8d4b6ec730243d294fdd4e5",
+      "source_payment_attributes": [
+        {
+          "payment_installments": 1,
+          "payment_type": "credit_card"
+        }
+      ]
+    },
+    {
+      "created_at": "2018-03-03T18:57:38-03:00",
+      "currency": "BRL",
+      "customer_reference": "5642d774c8f1ffc47e392423b26cc953",
+      "expected_cents": 32930,
+      "merchant_reference": "b985ea954efb889c576c9601be1a8c43",
+      "order_id": "61d2fdf2504d74c3b8cd660d75be2e12",
+      "source_payment_attributes": [
+        {
+          "payment_installments": 10,
+          "payment_type": "credit_card"
+        }
+      ]
+    },
+    {
+      "created_at": "2018-02-13T11:58:56-03:00",
+      "currency": "BRL",
+      "customer_reference": "077a31d845bce86a6a0f2530e0c2011e",
+      "expected_cents": 3777,
+      "merchant_reference": "dd2feb999f31adae7d97ec7ea06e74cc",
+      "order_id": "009e2e8a0ec1964f04486b955cc245c6",
+      "source_payment_attributes": [
+        {
+          "payment_installments": 1,
+          "payment_type": "credit_card"
+        }
+      ]
+    }
+  ],
+  "schema_version": "olist-sim-v2"
+}

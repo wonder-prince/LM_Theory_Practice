@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "amount_cents": 6053,
+      "currency": "BRL",
+      "effective_at": "2018-05-08T15:10:08-03:00",
+      "event_id": "7cc7fd2ebb7efa0eba57040a02952868",
+      "kind": "refund",
+      "merchant_reference": null,
+      "observed_at": "2018-05-08T15:10:08-03:00",
+      "order_id": null,
+      "original_transaction_id": "92a02e8cab16a302dda4dd7e46823107",
+      "status": "success",
+      "transaction_id": "b2e24b772c82f3545eb5cd94eaec07e9"
+    },
+    {
+      "amount_cents": 4539,
+      "currency": "BRL",
+      "effective_at": "2018-05-08T16:10:08-03:00",
+      "event_id": "1864ab2247e259e2c5dc85e53065c204",
+      "kind": "refund",
+      "merchant_reference": null,
+      "observed_at": "2018-05-08T16:10:08-03:00",
+      "order_id": null,
+      "original_transaction_id": "92a02e8cab16a302dda4dd7e46823107",
+      "status": "success",
+      "transaction_id": "f3abe6ea96546920f1b3c357fb0e9131"
+    },
+    {
+      "amount_cents": 18159,
+      "currency": "BRL",
+      "effective_at": "2018-05-07T15:10:08-03:00",
+      "event_id": "1ae8ae20467519781acef9b9b2b22b1c",
+      "kind": "receipt",
+      "merchant_reference": "ff097cf754e88bfa218519293e10c469",
+      "observed_at": "2018-05-07T15:10:08-03:00",
+      "order_id": "4b96bcce5bd9a6b43ee7ae4bfa3a8f81",
+      "original_transaction_id": null,
+      "status": "success",
+      "transaction_id": "92a02e8cab16a302dda4dd7e46823107"
+    }
+  ],
+  "orders": [
+    {
+      "created_at": "2018-04-29T15:10:08-03:00",
+      "currency": "BRL",
+      "customer_reference": "c71d85070131bece46622943c51e270d",
+      "expected_cents": 18159,
+      "merchant_reference": "ff097cf754e88bfa218519293e10c469",
+      "order_id": "4b96bcce5bd9a6b43ee7ae4bfa3a8f81",
+      "source_payment_attributes": [
+        {
+          "payment_installments": 1,
+          "payment_type": "boleto"
+        }
+      ]
+    }
+  ],
+  "schema_version": "olist-sim-v2"
+}

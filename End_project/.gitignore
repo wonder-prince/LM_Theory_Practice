@@ -1,0 +1,25 @@
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+traces/
+artifacts/api_*/
+artifacts/*baseline*/
+*.key
+*.pem
+secrets/
+
+# 下载缓存、镜像和本地复现产物
+/datasets/raw/
+/datasets/raw_kaggle/
+/datasets/raw_imported/
+/datasets/repro_*/
+/datasets/source_audit_repro.json
+
+# 本地运行和归档
+/artifacts/formatted_trace_*/
+/artifacts/readable_trace_*/
+/artifacts/langgraph_smoke/
+/docs/项目交互与设计过程记录.docx

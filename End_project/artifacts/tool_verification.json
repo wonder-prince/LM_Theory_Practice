@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-25",
+  "kind": "business_tool_verification_not_model_evaluation",
+  "tools_implemented": ["query_orders", "search_receipts", "find_match_candidates", "get_transaction_evidence", "check_duplicate_events", "query_refunds", "calculate_reconciliation", "validate_reconciliation"],
+  "unittest": {"total": 54, "original_data_tests": 32, "tool_tests_and_independent_regressions": 22, "failures": 0, "errors": 0},
+  "commands": [
+    "python3 -m unittest discover -s tests -v",
+    "python3 scripts/validate_data.py datasets/prepared"
+  ],
+  "dataset_integrity": {"tasks_verified": 610, "output_files_hash_verified": 623, "cross_split_source_order_overlap": 0, "cross_split_customer_overlap": 0},
+  "deterministic_tool_integration": {
+    "method": "Load each train/val task via ToolSession.from_visible using environment_file and query, run tool_demo.run_demo, require validation.valid",
+    "train": {"tasks": 200, "valid": 200},
+    "val": {"tasks": 50, "valid": 50},
+    "errors": [],
+    "held_out_test_used_for_tool_tuning": false
+  },
+  "independent_regressions": [
+    "Conflicting notification evidence remains inspectable without selecting a verified transaction",
+    "Unrelated order notification conflicts do not block current-order refund queries",
+    "Unrelated order notification conflicts do not invalidate current-order plans",
+    "Fully evidenced orders cannot claim fabricated missing references to justify review",
+    "Pending receipts are not allocated as successful receipts in the demo"
+  ],
+  "limitations": [
+    "No LLM is connected and no SFT trajectory or parameter training is completed",
+    "ToolSession loading restricts runtime files to train/val visible snapshots; a trusted held-out evaluation runner remains to be designed",
+    "API path restrictions and snapshot isolation are not an operating-system sandbox",
+    "Evidence lookup returns existing visible records only and does not obtain external bank/channel evidence",
+    "Call budgets and retry routing remain the responsibility of the future Agent orchestrator"
+  ]
+}

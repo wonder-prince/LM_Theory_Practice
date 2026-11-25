@@ -1,0 +1,62 @@
+{
+  "execution_date": "2026-11-25",
+  "python": "3.13.12",
+  "project": "End_project",
+  "generator_version": "olist-sim-v2",
+  "rule_version": "brl-reconciliation-v1",
+  "seed": 20261124,
+  "source_directory": "datasets/raw_kaggle",
+  "source_transport": "kaggle_public_api",
+  "source_license": {
+    "name": "CC BY-NC-SA 4.0",
+    "publisher": "Olist",
+    "dataset_page": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "page_rechecked_date": "2026-11-25",
+    "verification_method": "通过 WebFetch 重新读取原始发布页面，License 栏明确列出 CC BY-NC-SA 4.0",
+    "changes": "订单筛选、金额整数分转换、客户级切分、业务标识重建、程序合成支付退款及异常、等额干扰订单金额修改；逐实体或字段 provenance 保存在 hidden/facts.jsonl"
+  },
+  "commands_executed_from_project_equivalent": [
+    "python3 scripts/fetch_olist.py --output datasets/raw_kaggle --timeout 20",
+    "python3 scripts/fetch_olist.py --mirror --timeout 30",
+    "python3 scripts/audit_sources.py --primary datasets/raw_kaggle --mirror datasets/raw --output datasets/source_audit.json",
+    "python3 -m unittest discover -s tests -v",
+    "python3 scripts/prepare_data.py --raw datasets/raw_kaggle --output datasets/smoke --counts 12 12 24 --seed 20261124",
+    "python3 scripts/validate_data.py datasets/smoke --record",
+    "python3 scripts/prepare_data.py --raw datasets/raw_kaggle --output datasets/prepared --counts 200 50 360 --seed 20261124",
+    "python3 scripts/validate_data.py datasets/prepared --record"
+  ],
+  "unittest": {"tests_run": 32, "failures": 0, "errors": 0, "status": "passed"},
+  "smoke": {"tasks": 48, "split_tasks": [12, 12, 24], "output_files_hash_verified": 61, "status": "passed"},
+  "prepared": {
+    "tasks": 610,
+    "split_tasks": [200, 50, 360],
+    "source_orders": 1178,
+    "single_order_tasks": 339,
+    "three_order_batch_tasks": 271,
+    "visible_event_notifications": 1684,
+    "unique_transactions": 1642,
+    "refund_events": 323,
+    "review_target_orders": 54,
+    "cross_split_source_order_overlap": 0,
+    "cross_split_customer_overlap": 0,
+    "output_files_hash_verified": 623,
+    "status": "passed"
+  },
+  "source_audit": "datasets/source_audit.json",
+  "detailed_statistics": ["datasets/smoke/statistics.json", "datasets/prepared/statistics.json"],
+  "not_completed": [
+    "9 种业务工具及 Agent 框架集成",
+    "模型实际调用工具产生的轨迹及真实工具回执",
+    "SFT 样本转换、参数训练与权重对照评测",
+    "Agent 运行时仅可访问 agent_visible 的访问控制"
+  ],
+  "limitations": [
+    "事件和异常为明确标记的程序合成，公开底座不含实际银行到账或退款日志",
+    "跨切分共享场景和请求模板，未证明模板或时间域外泛化",
+    "批量任务为环境内 3 单封闭账期，不是 Olist 全站月度账单",
+    "上游 Kaggle 版本号未独立确认，保留实际源文件 SHA-256",
+    "smoke 与 prepared 同 seed 可重叠，不可合并为额外独立样本",
+    "确定性数据验证通过率不是 Agent 正确率"
+  ]
+}
