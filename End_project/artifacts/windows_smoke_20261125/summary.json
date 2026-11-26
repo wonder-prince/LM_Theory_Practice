@@ -1,0 +1,15 @@
+{
+  "tasks": 1,
+  "kinds": [
+    "scripted_mock"
+  ],
+  "stop_reasons": {
+    "completed": 1
+  },
+  "decisions": 3,
+  "tool_calls": 2,
+  "cost": null,
+  "accuracy": null,
+  "evaluation": "未接入独立评分；completed只代表返回了非空文本",
+  "model_effect_verified": false
+}

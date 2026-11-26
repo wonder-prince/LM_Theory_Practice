@@ -61,7 +61,7 @@ def render_trace(results):
         config = row.get('config') or {}
         backend = config.get('backend') or {}
         meta = {key: row.get(key) for key in ('task_id', 'kind', 'model_connected', 'stop_reason',
-                'decisions', 'tool_calls', 'steps', 'elapsed_seconds', 'token_usage', 'token_usage_complete', 'cost')}
+                'decisions', 'tool_calls', 'steps', 'elapsed_seconds', 'token_usage', 'token_usage_complete', 'cost', 'accuracy')}
         meta['model'] = backend.get('model')
         meta['evaluation'] = row.get('evaluation')
         out.append(json_block(meta))

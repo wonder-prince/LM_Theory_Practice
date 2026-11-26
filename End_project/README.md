@@ -2,9 +2,15 @@
 
 《大模型原理与应用》期末项目任务清单。
 
-当前状态：数据准备、8工具和LangGraph接入已完成。使用已有.venv（LangGraph 1.2.24）通过全部86项测试。正常订单及三订单歧义任务已用DeepSeek API试跑，方案通过工具核验。首轮暴露的balance schema字段说明已补全，试跑记录见第13节。目前尚无独立评分或总体正确率，未执行训练。
+当前状态：数据准备、8工具、LangGraph、本地Qwen GPU推理和独立评分已接入，107项测试通过。已完成Qwen基模验证集50题：整题精确匹配0/50、字段匹配率25.04%、工具调用成功率71.24%，全部原始结果已归档。未执行训练，尚无正式留出集总体正确率。
 
 ## 快速开始
+
+Windows 本地环境配置及本次用例实跑结果见 [Windows运行说明](docs/Windows运行说明.md)。无需模型 API 的完整八工具规则用例入口为 `python -X utf8 scripts/run_local_case.py`。
+
+本机 RTX 4060 的 Qwen3-4B GPU 环境及真实本地模型用例入口见 [Qwen本地测试](docs/Qwen模型下载与本地测试.md)。权重已下载，可直接运行 `scripts/run_local_qwen.py`，支持 `--split val --limit 5` 小批量测试。
+
+2026-11-26 已完成本地 NF4 4bit 基模的验证集50题：40题返回结构化结果，8题超时，1题输出超限，1题耗尽决策轮数。15题全部金额字段匹配，但交易ID、复核标记或方案覆盖不满足整题要求。模型和后台进程已自动退出。查看 [val50结果摘要与全部轨迹](artifacts/qwen_gpu_val50_20261126_004832/README.md)；环境与实跑记录见 [Windows运行说明](docs/Windows运行说明.md)。
 
 仓库包含已生成的 610 道对账任务及其环境和参考答案。使用 Python 3.13 可直接校验，无需下载 CSV、安装依赖或配置模型 API。
 
@@ -220,7 +226,7 @@ End_project/
 - `对账Agent业务流程图.svg`：对应矢量图，支持放大及后续编辑。
 - 两份过程与数据说明文档在该目录归档，记录决策、数据来源、合成策略及实际完成边界。
 
-流程图通过 `python3 scripts/export_pipeline.py` 导出。需要 Pillow 和中文字体；当前字体路径适用于 macOS，其他系统应修改脚本中的字体位置。
+流程图已归档为 PNG 和 SVG，可直接使用；旧的 macOS 专用一次性导出脚本已清理。
 
 ## 8. 下一步待决定
 
@@ -432,7 +438,11 @@ python3 agent_cli.py --backend api --split val --limit 5 --output-dir artifacts/
 python3 agent_cli.py --backend api --profile sft --split val --limit 5 --output-dir artifacts/api_sft_val_001
 ```
 
-输出 `traces.jsonl`（输入、模型动作、工具参数及真实回执、最终文本、停止原因、已报告token）与 `summary.json`。`completed`仅表示模型返回非空最终文本；尚未接独立评分器，`accuracy=null`、费用为null，不将成功返回当业务正确。usage缺失或有重试时，不宣称token计量完整。`model_connected`只在真实API返回有效助手消息后为true。缺少API配置时，在读取任务或发送请求前报错退出。
+输出 `traces.json`（输入、模型动作、工具参数及真实回执、最终文本、停止原因、已报告token）、`summary.json` 和 `evaluation.md`。真实模型任务结束后，独立评分器读取对应train/val参考答案，填写每题 `accuracy`、`cost`、`evaluation`；参考答案不传给模型。`accuracy`是结构化方案整题精确匹配率，缺失提交计失败，另报告字段匹配率与工具成功率；中文叙述、证据引用和复核理由未自动评分。`completed`只表示返回文本。脚本烟测排除出模型准确率。
+
+本地 `cost.api_fee=0`，同时记录实际耗时、token和输出速度；硬件/电费未实测，可用 `--compute-price-per-hour` 配置算力估价。API费用需同时提供 `--input-price-per-million` 和 `--output-price-per-million`，币种用 `--cost-currency` 指定；缺失单价会明确标记，usage不全时只报告部分用量估算。费额是用户单价估算，不是服务商账单，不自动处理缓存折扣。`model_connected`只在真实模型返回有效助手消息后为true。缺少API配置时，在读取任务或发送请求前报错退出。
+
+已有JSON/JSONL轨迹可用 `python -X utf8 agent_cli.py --evaluate-trace artifacts/某次运行/traces.json --split train --output-dir artifacts/新的评测目录` 离线评分，不重跑模型。结果及指标解释见 [Windows运行说明](docs/Windows运行说明.md)。
 
 ### 本次实际校验
 

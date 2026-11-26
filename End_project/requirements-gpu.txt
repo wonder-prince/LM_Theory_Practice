@@ -1,0 +1,11 @@
+# Python 3.11; install a CUDA torch wheel before this file (see docs).
+# This machine reuses torch 2.5.0+cu118 from its parent Conda environment.
+-r requirements.txt
+torch>=2.5,<2.7
+transformers==4.55.4
+accelerate==1.10.1
+bitsandbytes==0.47.0
+huggingface_hub>=0.34,<1
+safetensors>=0.4.5
+# Compatible with the inherited numba/torchtnt packages on this machine.
+numpy==1.24.4

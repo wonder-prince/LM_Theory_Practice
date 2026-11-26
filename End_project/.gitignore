@@ -1,4 +1,7 @@
 .venv/
+.venv-gpu/
+/models/
+/artifacts/gpu_setup/
 .env
 .env.*
 !.env.example

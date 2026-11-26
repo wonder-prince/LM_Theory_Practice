@@ -1,0 +1,213 @@
+{
+  "tasks": 1,
+  "kinds": [
+    "local_transformers"
+  ],
+  "stop_reasons": {
+    "completed": 1
+  },
+  "decisions": 5,
+  "tool_calls": 4,
+  "cost": {
+    "currency": "USD",
+    "api_fee": 0.0,
+    "api_fee_status": "see_task_costs",
+    "compute_fee_estimate": null,
+    "compute_fee_status": "not_configured_for_all_tasks",
+    "elapsed_seconds": 468.547,
+    "reported_token_usage": {
+      "prompt_tokens": 13696,
+      "completion_tokens": 1021,
+      "total_tokens": 14717
+    },
+    "token_usage_complete": true
+  },
+  "accuracy": 0.0,
+  "evaluation": {
+    "status": "scored",
+    "accuracy_definition": "结构化对账方案整题精确匹配率：订单覆盖、7项金额、收款/退款/待退款交易归属、复核标记和未分配交易全部正确，且正常返回最终文本；缺失提交计失败。不自动评分中文叙述、证据引用、复核理由及缺失字段说明。",
+    "tasks_scored": 1,
+    "correct_tasks": 0,
+    "tasks_excluded": 0,
+    "legacy_prompt_tasks": 1,
+    "submission_rate": 0.0,
+    "field_accuracy": 0.0,
+    "tool_validated_tasks": 0,
+    "failure_reasons": {
+      "MISSING_STRUCTURED_SUBMISSION": 1
+    },
+    "natural_language_report_scored": false
+  },
+  "model_effect_verified": false,
+  "local_model": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "model_dir": "D:\\All_ws\\LM_Theory_Practice\\End_project\\models\\Qwen3-4B-Instruct-2507",
+    "quantization": "NF4 double quantization",
+    "compute_dtype": "bfloat16",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "temperature": 0,
+    "max_context": 8192,
+    "max_new_tokens": 1024,
+    "peak_allocated_mib": 3249.4,
+    "trained_weights_verified": false
+  },
+  "task_results": [
+    {
+      "task_id": "f3c95789ace1a9542c5d6baed2eac902",
+      "kind": "local_transformers",
+      "stop_reason": "completed",
+      "model_connected": true,
+      "decisions": 5,
+      "tool_calls": 4,
+      "elapsed_seconds": 468.547,
+      "token_usage": {
+        "prompt_tokens": 13696,
+        "completion_tokens": 1021,
+        "total_tokens": 14717
+      },
+      "accuracy": 0.0,
+      "cost": {
+        "mode": "local_transformers",
+        "currency": "USD",
+        "elapsed_seconds": 468.547,
+        "reported_token_usage": {
+          "prompt_tokens": 13696,
+          "completion_tokens": 1021,
+          "total_tokens": 14717
+        },
+        "token_usage_complete": true,
+        "reported_output_tokens_per_second": 2.1791,
+        "api_fee": 0.0,
+        "compute_fee_estimate": null,
+        "compute_fee_status": "not_configured",
+        "scope": "elapsed含预填充、生成、工具执行与图调度，不含模型加载和评分；速度为端到端输出吞吐。本地API费用为0不代表硬件和电费为0；未测量实际电费。",
+        "api_fee_status": "local_no_api"
+      },
+      "evaluation": {
+        "status": "scored",
+        "grading_version": "structured-plan-exact-v1",
+        "accuracy_definition": "结构化对账方案整题精确匹配率：订单覆盖、7项金额、收款/退款/待退款交易归属、复核标记和未分配交易全部正确，且正常返回最终文本；缺失提交计失败。不自动评分中文叙述、证据引用、复核理由及缺失字段说明。",
+        "submission_source": null,
+        "submission_present": false,
+        "failure_reasons": [
+          "MISSING_STRUCTURED_SUBMISSION"
+        ],
+        "scores": {
+          "plan_exact_match": false,
+          "field_accuracy": 0.0,
+          "matched_fields": 0,
+          "total_fields": 13,
+          "order_coverage_exact": false,
+          "expected_order_ids": [
+            "cbf27734ac1035250b66402800e03d2c"
+          ],
+          "submitted_order_ids": [],
+          "orders": [
+            {
+              "order_id": "cbf27734ac1035250b66402800e03d2c",
+              "submitted": false,
+              "exact_match": false,
+              "matched_fields": 0,
+              "total_fields": 11,
+              "mismatches": [
+                {
+                  "field": "expected_cents",
+                  "expected": 10697,
+                  "actual": null
+                },
+                {
+                  "field": "received_cents",
+                  "expected": 10697,
+                  "actual": null
+                },
+                {
+                  "field": "refunded_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_cents",
+                  "expected": 10697,
+                  "actual": null
+                },
+                {
+                  "field": "collection_gap_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_vs_original_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "receipt_ids",
+                  "expected": [
+                    "6caf76a5703598aec280ad3729a6f2e7"
+                  ],
+                  "actual": null
+                },
+                {
+                  "field": "refund_ids",
+                  "expected": [],
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_ids",
+                  "expected": [],
+                  "actual": null
+                },
+                {
+                  "field": "review",
+                  "expected": false,
+                  "actual": null
+                }
+              ]
+            }
+          ],
+          "unallocated_exact": false,
+          "expected_unallocated_transaction_ids": [],
+          "submitted_unallocated_transaction_ids": null
+        },
+        "tool_metrics": {
+          "executed_calls": 4,
+          "successful_calls": 3,
+          "tool_errors": 1,
+          "tool_success_rate": 0.75,
+          "tool_error_codes": {
+            "INVALID_ARGUMENT": 1
+          },
+          "validation_calls": 0,
+          "last_validation_valid": null,
+          "validation_passed": false
+        },
+        "reference": {
+          "split": "train",
+          "category": "basic",
+          "rule_version": "brl-reconciliation-v1",
+          "sha256": "c083505e7d815735e03cedfb556a04b97b6bb9da17feabe35f50871a9e0920a4"
+        },
+        "submission_contract_requested": false,
+        "post_run_only": true,
+        "natural_language_report_scored": false
+      },
+      "executed_calls": 4,
+      "successful_calls": 3,
+      "tool_errors": 1,
+      "tool_success_rate": 0.75,
+      "tool_error_codes": {
+        "INVALID_ARGUMENT": 1
+      },
+      "validation_calls": 0,
+      "last_validation_valid": null,
+      "validation_passed": false
+    }
+  ],
+  "tool_validated_tasks": 0,
+  "split": "train"
+}

@@ -1,0 +1,83 @@
+{
+  "kind": "deterministic_rule_script_demo",
+  "model_connected": false,
+  "task_id": "004498f4b987f7c1cc9c26a813678d7a",
+  "split": "train",
+  "tool_calls": 16,
+  "distinct_tools": [
+    "calculate_reconciliation",
+    "check_duplicate_events",
+    "find_match_candidates",
+    "get_transaction_evidence",
+    "query_orders",
+    "query_refunds",
+    "search_receipts",
+    "validate_reconciliation"
+  ],
+  "validation": {
+    "valid": true,
+    "errors": []
+  },
+  "orders": 3,
+  "unallocated_transaction_ids": [],
+  "balances": [
+    {
+      "order_id": "0ecaf828e2f795538fcc69d79561a0d1",
+      "expected_cents": 9643,
+      "received_cents": 9643,
+      "refunded_cents": 3214,
+      "pending_refund_cents": 0,
+      "net_cents": 6429,
+      "collection_gap_cents": 0,
+      "net_vs_original_cents": 3214,
+      "receipt_ids": [
+        "44e767f743bb3898ac59157196f119be"
+      ],
+      "refund_ids": [
+        "4d1dd7de07c1837b55d0c57b811008b7"
+      ],
+      "pending_refund_ids": [],
+      "evidence_event_ids": [
+        "06f3179fec433ae026e144cf0b4152c8",
+        "23cc390c9354d0e3ce1f39485d23d1f3"
+      ]
+    },
+    {
+      "order_id": "a4ea3938d429fc52410915b0875b0b21",
+      "expected_cents": 15995,
+      "received_cents": 15995,
+      "refunded_cents": 0,
+      "pending_refund_cents": 0,
+      "net_cents": 15995,
+      "collection_gap_cents": 0,
+      "net_vs_original_cents": 0,
+      "receipt_ids": [
+        "83f11b2d9bbc0685bcc3323c673940a8"
+      ],
+      "refund_ids": [],
+      "pending_refund_ids": [],
+      "evidence_event_ids": [
+        "510adc2735aa850a6d7af233a7ffb088"
+      ]
+    },
+    {
+      "order_id": "b459071afb8adf9eff72c46dca8fbe35",
+      "expected_cents": 16302,
+      "received_cents": 16302,
+      "refunded_cents": 0,
+      "pending_refund_cents": 0,
+      "net_cents": 16302,
+      "collection_gap_cents": 0,
+      "net_vs_original_cents": 0,
+      "receipt_ids": [
+        "c78165de8458320c48ba29b1f8223c08"
+      ],
+      "refund_ids": [],
+      "pending_refund_ids": [],
+      "evidence_event_ids": [
+        "7aa1caa066de2e96c867119277832f1d"
+      ]
+    }
+  ],
+  "evaluation": "确定性业务工具自检；不代表模型能力或独立评测正确率"
+}

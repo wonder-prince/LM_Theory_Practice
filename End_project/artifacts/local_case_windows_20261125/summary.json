@@ -1,0 +1,44 @@
+{
+  "kind": "deterministic_rule_script_demo",
+  "model_connected": false,
+  "task_id": "f3c95789ace1a9542c5d6baed2eac902",
+  "split": "train",
+  "tool_calls": 8,
+  "distinct_tools": [
+    "calculate_reconciliation",
+    "check_duplicate_events",
+    "find_match_candidates",
+    "get_transaction_evidence",
+    "query_orders",
+    "query_refunds",
+    "search_receipts",
+    "validate_reconciliation"
+  ],
+  "validation": {
+    "valid": true,
+    "errors": []
+  },
+  "orders": 1,
+  "unallocated_transaction_ids": [],
+  "balances": [
+    {
+      "order_id": "cbf27734ac1035250b66402800e03d2c",
+      "expected_cents": 10697,
+      "received_cents": 10697,
+      "refunded_cents": 0,
+      "pending_refund_cents": 0,
+      "net_cents": 10697,
+      "collection_gap_cents": 0,
+      "net_vs_original_cents": 0,
+      "receipt_ids": [
+        "6caf76a5703598aec280ad3729a6f2e7"
+      ],
+      "refund_ids": [],
+      "pending_refund_ids": [],
+      "evidence_event_ids": [
+        "3f0c9931918c40bfd670c342c6cce996"
+      ]
+    }
+  ],
+  "evaluation": "确定性业务工具自检；不代表模型能力或独立评测正确率"
+}

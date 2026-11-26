@@ -1,0 +1,885 @@
+# Agent 实际效果评测
+
+结构化对账方案整题精确匹配率：订单覆盖、7项金额、收款/退款/待退款交易归属、复核标记和未分配交易全部正确，且正常返回最终文本；缺失提交计失败。不自动评分中文叙述、证据引用、复核理由及缺失字段说明。
+
+参考答案只在模型运行结束后读取。缺失结构化提交按失败计；纯文字回答未做自动语义评分。
+
+历史提示词没有强制结构化输出的任务，记录 submission_contract_requested=false；其0分表示未满足当前交付规范，不能解释成自然语言中的所有事实都错。
+
+| 任务 | 整题准确率 | 字段匹配率 | 工具成功率 | 耗时/秒 | 输出 tokens/秒 | API费用 | 结论 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| f3c95789ace1a9542c5d6baed2eac902 | 0.0% | 0.0% | 75.0% | 468.547 | 2.1791 | 0.0 USD | MISSING_STRUCTURED_SUBMISSION |
+| 004498f4b987f7c1cc9c26a813678d7a | 0.0% | 0.0% | 25.0% | 514.953 | 2.173 | 0.0 USD | MISSING_STRUCTURED_SUBMISSION |
+
+本地 API 费用为 0；硬件及电费未实测。算力估价仅在用户配置每小时单价时计算。
+
+## 汇总
+
+```json
+{
+  "tasks": 2,
+  "kinds": [
+    "local_transformers"
+  ],
+  "stop_reasons": {
+    "completed": 2
+  },
+  "decisions": 14,
+  "tool_calls": 12,
+  "cost": {
+    "currency": "USD",
+    "api_fee": 0.0,
+    "api_fee_status": "see_task_costs",
+    "compute_fee_estimate": null,
+    "compute_fee_status": "not_configured_for_all_tasks",
+    "elapsed_seconds": 983.5,
+    "reported_token_usage": {
+      "prompt_tokens": 43940,
+      "completion_tokens": 2140,
+      "total_tokens": 46080
+    },
+    "token_usage_complete": true
+  },
+  "accuracy": 0.0,
+  "evaluation": {
+    "status": "scored",
+    "accuracy_definition": "结构化对账方案整题精确匹配率：订单覆盖、7项金额、收款/退款/待退款交易归属、复核标记和未分配交易全部正确，且正常返回最终文本；缺失提交计失败。不自动评分中文叙述、证据引用、复核理由及缺失字段说明。",
+    "tasks_scored": 2,
+    "correct_tasks": 0,
+    "tasks_excluded": 0,
+    "legacy_prompt_tasks": 2,
+    "submission_rate": 0.0,
+    "field_accuracy": 0.0,
+    "tool_validated_tasks": 0,
+    "failure_reasons": {
+      "MISSING_STRUCTURED_SUBMISSION": 2
+    },
+    "natural_language_report_scored": false
+  },
+  "model_effect_verified": false,
+  "task_results": [
+    {
+      "task_id": "f3c95789ace1a9542c5d6baed2eac902",
+      "kind": "local_transformers",
+      "stop_reason": "completed",
+      "model_connected": true,
+      "decisions": 5,
+      "tool_calls": 4,
+      "elapsed_seconds": 468.547,
+      "token_usage": {
+        "prompt_tokens": 13696,
+        "completion_tokens": 1021,
+        "total_tokens": 14717
+      },
+      "accuracy": 0.0,
+      "cost": {
+        "mode": "local_transformers",
+        "currency": "USD",
+        "elapsed_seconds": 468.547,
+        "reported_token_usage": {
+          "prompt_tokens": 13696,
+          "completion_tokens": 1021,
+          "total_tokens": 14717
+        },
+        "token_usage_complete": true,
+        "reported_output_tokens_per_second": 2.1791,
+        "api_fee": 0.0,
+        "compute_fee_estimate": null,
+        "compute_fee_status": "not_configured",
+        "scope": "elapsed含预填充、生成、工具执行与图调度，不含模型加载和评分；速度为端到端输出吞吐。本地API费用为0不代表硬件和电费为0；未测量实际电费。",
+        "api_fee_status": "local_no_api"
+      },
+      "evaluation": {
+        "status": "scored",
+        "grading_version": "structured-plan-exact-v1",
+        "accuracy_definition": "结构化对账方案整题精确匹配率：订单覆盖、7项金额、收款/退款/待退款交易归属、复核标记和未分配交易全部正确，且正常返回最终文本；缺失提交计失败。不自动评分中文叙述、证据引用、复核理由及缺失字段说明。",
+        "submission_source": null,
+        "submission_present": false,
+        "failure_reasons": [
+          "MISSING_STRUCTURED_SUBMISSION"
+        ],
+        "scores": {
+          "plan_exact_match": false,
+          "field_accuracy": 0.0,
+          "matched_fields": 0,
+          "total_fields": 13,
+          "order_coverage_exact": false,
+          "expected_order_ids": [
+            "cbf27734ac1035250b66402800e03d2c"
+          ],
+          "submitted_order_ids": [],
+          "orders": [
+            {
+              "order_id": "cbf27734ac1035250b66402800e03d2c",
+              "submitted": false,
+              "exact_match": false,
+              "matched_fields": 0,
+              "total_fields": 11,
+              "mismatches": [
+                {
+                  "field": "expected_cents",
+                  "expected": 10697,
+                  "actual": null
+                },
+                {
+                  "field": "received_cents",
+                  "expected": 10697,
+                  "actual": null
+                },
+                {
+                  "field": "refunded_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_cents",
+                  "expected": 10697,
+                  "actual": null
+                },
+                {
+                  "field": "collection_gap_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_vs_original_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "receipt_ids",
+                  "expected": [
+                    "6caf76a5703598aec280ad3729a6f2e7"
+                  ],
+                  "actual": null
+                },
+                {
+                  "field": "refund_ids",
+                  "expected": [],
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_ids",
+                  "expected": [],
+                  "actual": null
+                },
+                {
+                  "field": "review",
+                  "expected": false,
+                  "actual": null
+                }
+              ]
+            }
+          ],
+          "unallocated_exact": false,
+          "expected_unallocated_transaction_ids": [],
+          "submitted_unallocated_transaction_ids": null
+        },
+        "tool_metrics": {
+          "executed_calls": 4,
+          "successful_calls": 3,
+          "tool_errors": 1,
+          "tool_success_rate": 0.75,
+          "tool_error_codes": {
+            "INVALID_ARGUMENT": 1
+          },
+          "validation_calls": 0,
+          "last_validation_valid": null,
+          "validation_passed": false
+        },
+        "reference": {
+          "split": "train",
+          "category": "basic",
+          "rule_version": "brl-reconciliation-v1",
+          "sha256": "c083505e7d815735e03cedfb556a04b97b6bb9da17feabe35f50871a9e0920a4"
+        },
+        "submission_contract_requested": false,
+        "post_run_only": true,
+        "natural_language_report_scored": false
+      },
+      "executed_calls": 4,
+      "successful_calls": 3,
+      "tool_errors": 1,
+      "tool_success_rate": 0.75,
+      "tool_error_codes": {
+        "INVALID_ARGUMENT": 1
+      },
+      "validation_calls": 0,
+      "last_validation_valid": null,
+      "validation_passed": false
+    },
+    {
+      "task_id": "004498f4b987f7c1cc9c26a813678d7a",
+      "kind": "local_transformers",
+      "stop_reason": "completed",
+      "model_connected": true,
+      "decisions": 9,
+      "tool_calls": 8,
+      "elapsed_seconds": 514.953,
+      "token_usage": {
+        "prompt_tokens": 30244,
+        "completion_tokens": 1119,
+        "total_tokens": 31363
+      },
+      "accuracy": 0.0,
+      "cost": {
+        "mode": "local_transformers",
+        "currency": "USD",
+        "elapsed_seconds": 514.953,
+        "reported_token_usage": {
+          "prompt_tokens": 30244,
+          "completion_tokens": 1119,
+          "total_tokens": 31363
+        },
+        "token_usage_complete": true,
+        "reported_output_tokens_per_second": 2.173,
+        "api_fee": 0.0,
+        "compute_fee_estimate": null,
+        "compute_fee_status": "not_configured",
+        "scope": "elapsed含预填充、生成、工具执行与图调度，不含模型加载和评分；速度为端到端输出吞吐。本地API费用为0不代表硬件和电费为0；未测量实际电费。",
+        "api_fee_status": "local_no_api"
+      },
+      "evaluation": {
+        "status": "scored",
+        "grading_version": "structured-plan-exact-v1",
+        "accuracy_definition": "结构化对账方案整题精确匹配率：订单覆盖、7项金额、收款/退款/待退款交易归属、复核标记和未分配交易全部正确，且正常返回最终文本；缺失提交计失败。不自动评分中文叙述、证据引用、复核理由及缺失字段说明。",
+        "submission_source": null,
+        "submission_present": false,
+        "failure_reasons": [
+          "MISSING_STRUCTURED_SUBMISSION"
+        ],
+        "scores": {
+          "plan_exact_match": false,
+          "field_accuracy": 0.0,
+          "matched_fields": 0,
+          "total_fields": 35,
+          "order_coverage_exact": false,
+          "expected_order_ids": [
+            "0ecaf828e2f795538fcc69d79561a0d1",
+            "a4ea3938d429fc52410915b0875b0b21",
+            "b459071afb8adf9eff72c46dca8fbe35"
+          ],
+          "submitted_order_ids": [],
+          "orders": [
+            {
+              "order_id": "0ecaf828e2f795538fcc69d79561a0d1",
+              "submitted": false,
+              "exact_match": false,
+              "matched_fields": 0,
+              "total_fields": 11,
+              "mismatches": [
+                {
+                  "field": "expected_cents",
+                  "expected": 9643,
+                  "actual": null
+                },
+                {
+                  "field": "received_cents",
+                  "expected": 9643,
+                  "actual": null
+                },
+                {
+                  "field": "refunded_cents",
+                  "expected": 3214,
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_cents",
+                  "expected": 6429,
+                  "actual": null
+                },
+                {
+                  "field": "collection_gap_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_vs_original_cents",
+                  "expected": 3214,
+                  "actual": null
+                },
+                {
+                  "field": "receipt_ids",
+                  "expected": [
+                    "44e767f743bb3898ac59157196f119be"
+                  ],
+                  "actual": null
+                },
+                {
+                  "field": "refund_ids",
+                  "expected": [
+                    "4d1dd7de07c1837b55d0c57b811008b7"
+                  ],
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_ids",
+                  "expected": [],
+                  "actual": null
+                },
+                {
+                  "field": "review",
+                  "expected": false,
+                  "actual": null
+                }
+              ]
+            },
+            {
+              "order_id": "a4ea3938d429fc52410915b0875b0b21",
+              "submitted": false,
+              "exact_match": false,
+              "matched_fields": 0,
+              "total_fields": 11,
+              "mismatches": [
+                {
+                  "field": "expected_cents",
+                  "expected": 15995,
+                  "actual": null
+                },
+                {
+                  "field": "received_cents",
+                  "expected": 15995,
+                  "actual": null
+                },
+                {
+                  "field": "refunded_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_cents",
+                  "expected": 15995,
+                  "actual": null
+                },
+                {
+                  "field": "collection_gap_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_vs_original_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "receipt_ids",
+                  "expected": [
+                    "83f11b2d9bbc0685bcc3323c673940a8"
+                  ],
+                  "actual": null
+                },
+                {
+                  "field": "refund_ids",
+                  "expected": [],
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_ids",
+                  "expected": [],
+                  "actual": null
+                },
+                {
+                  "field": "review",
+                  "expected": false,
+                  "actual": null
+                }
+              ]
+            },
+            {
+              "order_id": "b459071afb8adf9eff72c46dca8fbe35",
+              "submitted": false,
+              "exact_match": false,
+              "matched_fields": 0,
+              "total_fields": 11,
+              "mismatches": [
+                {
+                  "field": "expected_cents",
+                  "expected": 16302,
+                  "actual": null
+                },
+                {
+                  "field": "received_cents",
+                  "expected": 16302,
+                  "actual": null
+                },
+                {
+                  "field": "refunded_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_cents",
+                  "expected": 16302,
+                  "actual": null
+                },
+                {
+                  "field": "collection_gap_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "net_vs_original_cents",
+                  "expected": 0,
+                  "actual": null
+                },
+                {
+                  "field": "receipt_ids",
+                  "expected": [
+                    "c78165de8458320c48ba29b1f8223c08"
+                  ],
+                  "actual": null
+                },
+                {
+                  "field": "refund_ids",
+                  "expected": [],
+                  "actual": null
+                },
+                {
+                  "field": "pending_refund_ids",
+                  "expected": [],
+                  "actual": null
+                },
+                {
+                  "field": "review",
+                  "expected": false,
+                  "actual": null
+                }
+              ]
+            }
+          ],
+          "unallocated_exact": false,
+          "expected_unallocated_transaction_ids": [],
+          "submitted_unallocated_transaction_ids": null
+        },
+        "tool_metrics": {
+          "executed_calls": 8,
+          "successful_calls": 2,
+          "tool_errors": 6,
+          "tool_success_rate": 0.25,
+          "tool_error_codes": {
+            "TRANSACTION_UNAVAILABLE": 6
+          },
+          "validation_calls": 0,
+          "last_validation_valid": null,
+          "validation_passed": false
+        },
+        "reference": {
+          "split": "train",
+          "category": "cross_tool",
+          "rule_version": "brl-reconciliation-v1",
+          "sha256": "c083505e7d815735e03cedfb556a04b97b6bb9da17feabe35f50871a9e0920a4"
+        },
+        "submission_contract_requested": false,
+        "post_run_only": true,
+        "natural_language_report_scored": false
+      },
+      "executed_calls": 8,
+      "successful_calls": 2,
+      "tool_errors": 6,
+      "tool_success_rate": 0.25,
+      "tool_error_codes": {
+        "TRANSACTION_UNAVAILABLE": 6
+      },
+      "validation_calls": 0,
+      "last_validation_valid": null,
+      "validation_passed": false
+    }
+  ],
+  "tool_validated_tasks": 0
+}
+```
+
+
+## f3c95789ace1a9542c5d6baed2eac902 差异明细
+
+```json
+{
+  "status": "scored",
+  "grading_version": "structured-plan-exact-v1",
+  "accuracy_definition": "结构化对账方案整题精确匹配率：订单覆盖、7项金额、收款/退款/待退款交易归属、复核标记和未分配交易全部正确，且正常返回最终文本；缺失提交计失败。不自动评分中文叙述、证据引用、复核理由及缺失字段说明。",
+  "submission_source": null,
+  "submission_present": false,
+  "failure_reasons": [
+    "MISSING_STRUCTURED_SUBMISSION"
+  ],
+  "scores": {
+    "plan_exact_match": false,
+    "field_accuracy": 0.0,
+    "matched_fields": 0,
+    "total_fields": 13,
+    "order_coverage_exact": false,
+    "expected_order_ids": [
+      "cbf27734ac1035250b66402800e03d2c"
+    ],
+    "submitted_order_ids": [],
+    "orders": [
+      {
+        "order_id": "cbf27734ac1035250b66402800e03d2c",
+        "submitted": false,
+        "exact_match": false,
+        "matched_fields": 0,
+        "total_fields": 11,
+        "mismatches": [
+          {
+            "field": "expected_cents",
+            "expected": 10697,
+            "actual": null
+          },
+          {
+            "field": "received_cents",
+            "expected": 10697,
+            "actual": null
+          },
+          {
+            "field": "refunded_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "pending_refund_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "net_cents",
+            "expected": 10697,
+            "actual": null
+          },
+          {
+            "field": "collection_gap_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "net_vs_original_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "receipt_ids",
+            "expected": [
+              "6caf76a5703598aec280ad3729a6f2e7"
+            ],
+            "actual": null
+          },
+          {
+            "field": "refund_ids",
+            "expected": [],
+            "actual": null
+          },
+          {
+            "field": "pending_refund_ids",
+            "expected": [],
+            "actual": null
+          },
+          {
+            "field": "review",
+            "expected": false,
+            "actual": null
+          }
+        ]
+      }
+    ],
+    "unallocated_exact": false,
+    "expected_unallocated_transaction_ids": [],
+    "submitted_unallocated_transaction_ids": null
+  },
+  "tool_metrics": {
+    "executed_calls": 4,
+    "successful_calls": 3,
+    "tool_errors": 1,
+    "tool_success_rate": 0.75,
+    "tool_error_codes": {
+      "INVALID_ARGUMENT": 1
+    },
+    "validation_calls": 0,
+    "last_validation_valid": null,
+    "validation_passed": false
+  },
+  "reference": {
+    "split": "train",
+    "category": "basic",
+    "rule_version": "brl-reconciliation-v1",
+    "sha256": "c083505e7d815735e03cedfb556a04b97b6bb9da17feabe35f50871a9e0920a4"
+  },
+  "submission_contract_requested": false,
+  "post_run_only": true,
+  "natural_language_report_scored": false
+}
+```
+
+
+## 004498f4b987f7c1cc9c26a813678d7a 差异明细
+
+```json
+{
+  "status": "scored",
+  "grading_version": "structured-plan-exact-v1",
+  "accuracy_definition": "结构化对账方案整题精确匹配率：订单覆盖、7项金额、收款/退款/待退款交易归属、复核标记和未分配交易全部正确，且正常返回最终文本；缺失提交计失败。不自动评分中文叙述、证据引用、复核理由及缺失字段说明。",
+  "submission_source": null,
+  "submission_present": false,
+  "failure_reasons": [
+    "MISSING_STRUCTURED_SUBMISSION"
+  ],
+  "scores": {
+    "plan_exact_match": false,
+    "field_accuracy": 0.0,
+    "matched_fields": 0,
+    "total_fields": 35,
+    "order_coverage_exact": false,
+    "expected_order_ids": [
+      "0ecaf828e2f795538fcc69d79561a0d1",
+      "a4ea3938d429fc52410915b0875b0b21",
+      "b459071afb8adf9eff72c46dca8fbe35"
+    ],
+    "submitted_order_ids": [],
+    "orders": [
+      {
+        "order_id": "0ecaf828e2f795538fcc69d79561a0d1",
+        "submitted": false,
+        "exact_match": false,
+        "matched_fields": 0,
+        "total_fields": 11,
+        "mismatches": [
+          {
+            "field": "expected_cents",
+            "expected": 9643,
+            "actual": null
+          },
+          {
+            "field": "received_cents",
+            "expected": 9643,
+            "actual": null
+          },
+          {
+            "field": "refunded_cents",
+            "expected": 3214,
+            "actual": null
+          },
+          {
+            "field": "pending_refund_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "net_cents",
+            "expected": 6429,
+            "actual": null
+          },
+          {
+            "field": "collection_gap_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "net_vs_original_cents",
+            "expected": 3214,
+            "actual": null
+          },
+          {
+            "field": "receipt_ids",
+            "expected": [
+              "44e767f743bb3898ac59157196f119be"
+            ],
+            "actual": null
+          },
+          {
+            "field": "refund_ids",
+            "expected": [
+              "4d1dd7de07c1837b55d0c57b811008b7"
+            ],
+            "actual": null
+          },
+          {
+            "field": "pending_refund_ids",
+            "expected": [],
+            "actual": null
+          },
+          {
+            "field": "review",
+            "expected": false,
+            "actual": null
+          }
+        ]
+      },
+      {
+        "order_id": "a4ea3938d429fc52410915b0875b0b21",
+        "submitted": false,
+        "exact_match": false,
+        "matched_fields": 0,
+        "total_fields": 11,
+        "mismatches": [
+          {
+            "field": "expected_cents",
+            "expected": 15995,
+            "actual": null
+          },
+          {
+            "field": "received_cents",
+            "expected": 15995,
+            "actual": null
+          },
+          {
+            "field": "refunded_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "pending_refund_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "net_cents",
+            "expected": 15995,
+            "actual": null
+          },
+          {
+            "field": "collection_gap_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "net_vs_original_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "receipt_ids",
+            "expected": [
+              "83f11b2d9bbc0685bcc3323c673940a8"
+            ],
+            "actual": null
+          },
+          {
+            "field": "refund_ids",
+            "expected": [],
+            "actual": null
+          },
+          {
+            "field": "pending_refund_ids",
+            "expected": [],
+            "actual": null
+          },
+          {
+            "field": "review",
+            "expected": false,
+            "actual": null
+          }
+        ]
+      },
+      {
+        "order_id": "b459071afb8adf9eff72c46dca8fbe35",
+        "submitted": false,
+        "exact_match": false,
+        "matched_fields": 0,
+        "total_fields": 11,
+        "mismatches": [
+          {
+            "field": "expected_cents",
+            "expected": 16302,
+            "actual": null
+          },
+          {
+            "field": "received_cents",
+            "expected": 16302,
+            "actual": null
+          },
+          {
+            "field": "refunded_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "pending_refund_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "net_cents",
+            "expected": 16302,
+            "actual": null
+          },
+          {
+            "field": "collection_gap_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "net_vs_original_cents",
+            "expected": 0,
+            "actual": null
+          },
+          {
+            "field": "receipt_ids",
+            "expected": [
+              "c78165de8458320c48ba29b1f8223c08"
+            ],
+            "actual": null
+          },
+          {
+            "field": "refund_ids",
+            "expected": [],
+            "actual": null
+          },
+          {
+            "field": "pending_refund_ids",
+            "expected": [],
+            "actual": null
+          },
+          {
+            "field": "review",
+            "expected": false,
+            "actual": null
+          }
+        ]
+      }
+    ],
+    "unallocated_exact": false,
+    "expected_unallocated_transaction_ids": [],
+    "submitted_unallocated_transaction_ids": null
+  },
+  "tool_metrics": {
+    "executed_calls": 8,
+    "successful_calls": 2,
+    "tool_errors": 6,
+    "tool_success_rate": 0.25,
+    "tool_error_codes": {
+      "TRANSACTION_UNAVAILABLE": 6
+    },
+    "validation_calls": 0,
+    "last_validation_valid": null,
+    "validation_passed": false
+  },
+  "reference": {
+    "split": "train",
+    "category": "cross_tool",
+    "rule_version": "brl-reconciliation-v1",
+    "sha256": "c083505e7d815735e03cedfb556a04b97b6bb9da17feabe35f50871a9e0920a4"
+  },
+  "submission_contract_requested": false,
+  "post_run_only": true,
+  "natural_language_report_scored": false
+}
+```
+

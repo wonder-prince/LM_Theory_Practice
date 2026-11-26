@@ -1,0 +1,109 @@
+{
+  "kind": "post_run_visible_tool_audit",
+  "model_connected": false,
+  "note": "运行结束后的人工审阅复查；只查询可见工具，不属于模型轨迹，不读取隐藏答案。",
+  "task_id": "004498f4b987f7c1cc9c26a813678d7a",
+  "receipts": {
+    "ok": true,
+    "data": {
+      "events": [
+        {
+          "amount_cents": 15995,
+          "currency": "BRL",
+          "effective_at": "2018-06-13T19:34:59-03:00",
+          "event_id": "510adc2735aa850a6d7af233a7ffb088",
+          "kind": "receipt",
+          "merchant_reference": "4260ce86ca96fd783a569ee452a5d423",
+          "observed_at": "2018-06-13T19:34:59-03:00",
+          "order_id": "a4ea3938d429fc52410915b0875b0b21",
+          "original_transaction_id": null,
+          "status": "success",
+          "transaction_id": "83f11b2d9bbc0685bcc3323c673940a8"
+        },
+        {
+          "amount_cents": 16302,
+          "currency": "BRL",
+          "effective_at": "2018-06-13T19:34:59-03:00",
+          "event_id": "7aa1caa066de2e96c867119277832f1d",
+          "kind": "receipt",
+          "merchant_reference": "135d63cf1293924c402a2e8f96fc5ce8",
+          "observed_at": "2018-06-13T19:34:59-03:00",
+          "order_id": "b459071afb8adf9eff72c46dca8fbe35",
+          "original_transaction_id": null,
+          "status": "success",
+          "transaction_id": "c78165de8458320c48ba29b1f8223c08"
+        },
+        {
+          "amount_cents": 9643,
+          "currency": "BRL",
+          "effective_at": "2018-06-13T19:34:59-03:00",
+          "event_id": "23cc390c9354d0e3ce1f39485d23d1f3",
+          "kind": "receipt",
+          "merchant_reference": "c1af446506f102fce1010f154a9f2968",
+          "observed_at": "2018-06-13T19:34:59-03:00",
+          "order_id": "0ecaf828e2f795538fcc69d79561a0d1",
+          "original_transaction_id": null,
+          "status": "success",
+          "transaction_id": "44e767f743bb3898ac59157196f119be"
+        }
+      ],
+      "cutoff": "2018-06-15T19:34:59-03:00"
+    },
+    "error": null
+  },
+  "refunds_without_order_rejected": {
+    "ok": false,
+    "data": null,
+    "error": {
+      "code": "INVALID_ARGUMENT",
+      "message": "提供订单号或原交易号之一",
+      "details": {}
+    }
+  },
+  "refunds_by_order": [
+    {
+      "order_id": "0ecaf828e2f795538fcc69d79561a0d1",
+      "result": {
+        "ok": true,
+        "data": {
+          "events": [
+            {
+              "amount_cents": 3214,
+              "currency": "BRL",
+              "effective_at": "2018-06-14T19:34:59-03:00",
+              "event_id": "06f3179fec433ae026e144cf0b4152c8",
+              "kind": "refund",
+              "merchant_reference": null,
+              "observed_at": "2018-06-14T19:34:59-03:00",
+              "order_id": null,
+              "original_transaction_id": "44e767f743bb3898ac59157196f119be",
+              "status": "success",
+              "transaction_id": "4d1dd7de07c1837b55d0c57b811008b7"
+            }
+          ]
+        },
+        "error": null
+      }
+    },
+    {
+      "order_id": "a4ea3938d429fc52410915b0875b0b21",
+      "result": {
+        "ok": true,
+        "data": {
+          "events": []
+        },
+        "error": null
+      }
+    },
+    {
+      "order_id": "b459071afb8adf9eff72c46dca8fbe35",
+      "result": {
+        "ok": true,
+        "data": {
+          "events": []
+        },
+        "error": null
+      }
+    }
+  ]
+}

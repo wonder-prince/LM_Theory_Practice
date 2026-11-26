@@ -1,0 +1,52 @@
+{
+  "tasks": 1,
+  "kinds": [
+    "local_transformers"
+  ],
+  "stop_reasons": {
+    "completed": 1
+  },
+  "decisions": 9,
+  "tool_calls": 8,
+  "cost": null,
+  "accuracy": null,
+  "evaluation": "未接入独立评分；completed只代表返回了非空文本",
+  "model_effect_verified": false,
+  "local_model": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "model_dir": "D:\\All_ws\\LM_Theory_Practice\\End_project\\models\\Qwen3-4B-Instruct-2507",
+    "quantization": "NF4 double quantization",
+    "compute_dtype": "bfloat16",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "temperature": 0,
+    "torch_version": "2.5.0+cu118",
+    "cuda_version": "11.8",
+    "cpu_threads": 4,
+    "max_context": 16384,
+    "max_new_tokens": 2048,
+    "peak_allocated_mib": 3413.71,
+    "trained_weights_verified": false
+  },
+  "split": "train",
+  "requested_tasks": 1,
+  "task_results": [
+    {
+      "task_id": "004498f4b987f7c1cc9c26a813678d7a",
+      "stop_reason": "completed",
+      "model_connected": true,
+      "decisions": 9,
+      "tool_calls": 8,
+      "elapsed_seconds": 514.953,
+      "tool_errors": 6,
+      "validation_calls": 0,
+      "last_validation_valid": null,
+      "last_validation_errors": null,
+      "token_usage": {
+        "prompt_tokens": 30244,
+        "completion_tokens": 1119,
+        "total_tokens": 31363
+      }
+    }
+  ],
+  "tool_validated_tasks": 0
+}
