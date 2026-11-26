@@ -6,6 +6,8 @@
 
 ## 快速开始
 
+**第一次在另一台 Windows 电脑运行，请先看 [Windows 从零复现指南](docs/Windows从零复现指南.md)**：从安装 Python/Git、创建独立环境，到下载固定版本 Qwen 权重、单题/批量运行和结果验收。仓库不包含模型权重、虚拟环境或密钥。
+
 Windows 本地环境配置及本次用例实跑结果见 [Windows运行说明](docs/Windows运行说明.md)。无需模型 API 的完整八工具规则用例入口为 `python -X utf8 scripts/run_local_case.py`。
 
 本机 RTX 4060 的 Qwen3-4B GPU 环境及真实本地模型用例入口见 [Qwen本地测试](docs/Qwen模型下载与本地测试.md)。权重已下载，可直接运行 `scripts/run_local_qwen.py`，支持 `--split val --limit 5` 小批量测试。

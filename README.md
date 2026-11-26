@@ -13,4 +13,6 @@
 
 各周的操作步骤详见对应目录中的实验说明和实验指导书。
 
+期末项目为[订单—收款—退款智能对账 Agent](End_project/README.md)。在另一台 Windows 电脑从零安装、下载模型并验证运行，见 [Windows 从零复现指南](End_project/docs/Windows从零复现指南.md)，包含无 GPU 基础验证、本地 Qwen 推理和可选 API 路线。
+
 第九、十周的 GPU 电脑选择、独立环境安装和模型资产迁移见 [GPU 环境配置](GPU环境配置.md)。

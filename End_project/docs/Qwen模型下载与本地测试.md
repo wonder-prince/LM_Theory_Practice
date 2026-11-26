@@ -1,5 +1,7 @@
 # Qwen3-4B 本地 GPU 测试
 
+新电脑请先阅读 [Windows 从零复现指南](Windows从零复现指南.md)，其中提供固定版本权重下载、SHA256 校验和独立 GPU 环境安装命令。下文“已下载”及 Conda 路径描述的是作者本机，模型权重没有上传到 GitHub。
+
 本地模型已经位于 `models/Qwen3-4B-Instruct-2507`，包含三片 safetensors、tokenizer 和下载校验清单 `download_manifest.json`。直接加载这些权重，不需要重新下载。模型为 Qwen3-4B-Instruct-2507，未做本项目微调。
 
 ## 本机环境
