@@ -15,6 +15,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from agent_runtime import Budget, run_agent
+from evaluation import extract_submission
 from agent_cli import load_tasks, run_batch, summarize, main
 from business_tools import ToolSession, TOOL_NAMES
 from model_backends import OpenAIBackend, ScriptedBackend, SmokeBackend, tool_message
@@ -100,6 +101,65 @@ class GraphTests(unittest.TestCase):
         self.assertFalse(tools[2]['result']['data']['candidates'][0]['strong'])
         self.assertTrue(tools[-1]['result']['data']['valid'])
         self.assertIn('待复核', result['final_text'])
+
+    def test_final_json_is_checked_and_repaired_from_feedback(self):
+        plan = {'orders': [{'order_id': 'o1', 'receipt_ids': ['ep1'], 'refund_ids': [],
+                            'review': False, 'review_reason': '', 'missing_fields': []}],
+                'unallocated_transaction_ids': []}
+
+        def final_message():
+            return {'role': 'assistant', 'content': f'对账报告\n<reconciliation_result>{json.dumps(plan)}</reconciliation_result>'}
+
+        invalid = final_message()
+        plan['orders'][0]['receipt_ids'] = ['p1']
+        result = run_fixture(ScriptedBackend([invalid, final_message()]))
+        checks = [e for e in result['trace'] if e['event'] == 'submission_check']
+        self.assertEqual([c['result']['data']['valid'] for c in checks], [False, True])
+        retry = next(e for e in result['trace'] if e['event'] == 'model_input' and e['decision'] == 2)
+        self.assertIn('TRANSACTION_UNAVAILABLE', retry['messages'][-1]['content'])
+        self.assertEqual(result['stop_reason'], 'completed')
+        accepted, source, error = extract_submission(result)
+        self.assertEqual((source, error), ('final_json', None))
+        self.assertEqual(accepted['orders'][0]['balance']['received_cents'], 1000)
+        self.assertEqual(accepted['orders'][0]['balance']['evidence_event_ids'], ['ep1'])
+        self.assertEqual(extract_submission({'final_text': result['final_text']})[0], accepted)
+
+    def test_validate_call_computes_balance_before_final_report(self):
+        plan = {'orders': [{'order_id': 'o1', 'receipt_ids': ['p1'], 'refund_ids': ['r1'],
+                            'review': False, 'review_reason': '', 'missing_fields': []}],
+                'unallocated_transaction_ids': []}
+        env = copy.deepcopy(ENV)
+        env['events'].append({**env['events'][0], 'event_id': 'er1', 'transaction_id': 'r1',
+                              'kind': 'refund', 'status': 'pending', 'original_transaction_id': 'p1',
+                              'amount_cents': 200})
+        result = run_fixture(ScriptedBackend([tool_message(('validate_reconciliation', {'plan': plan})), FINAL]),
+                             environment=env)
+        self.assertEqual(result['stop_reason'], 'completed')
+        self.assertTrue(paired(result['messages']))
+        receipt = next(e['result'] for e in result['trace'] if e['event'] == 'tool_result')
+        balance = receipt['data']['balances'][0]
+        self.assertEqual((balance['net_cents'], balance['pending_refund_cents']), (1000, 200))
+        self.assertEqual(extract_submission(result)[0]['orders'][0]['balance']['pending_refund_ids'], ['r1'])
+
+    def test_invalid_final_cannot_fall_back_to_earlier_valid_tool_submission(self):
+        valid = {'orders': [{'order_id': 'o1', 'receipt_ids': ['p1'], 'refund_ids': [],
+                             'review': False, 'review_reason': '', 'missing_fields': []}],
+                 'unallocated_transaction_ids': []}
+        malformed = {'role': 'assistant', 'content': '报告<reconciliation_result>{</reconciliation_result>'}
+        result = run_fixture(ScriptedBackend([tool_message(('validate_reconciliation', {'plan': valid})),
+                                              malformed, FINAL, FINAL]))
+        self.assertEqual(result['stop_reason'], 'submission_rejected')
+        self.assertEqual(result['final_text'], '')
+        self.assertIsNone(result['validated_submission'])
+        self.assertEqual(extract_submission(result)[2], 'INVALID_SUBMISSION_JSON')
+
+    def test_real_backend_requires_submission_and_respects_decision_budget(self):
+        backend = ScriptedBackend([FINAL])
+        backend.kind = 'local_transformers'
+        result = run_fixture(backend, Budget(max_decisions=1))
+        self.assertEqual(result['stop_reason'], 'decision_budget')
+        self.assertEqual(result['final_text'], '')
+        self.assertEqual(extract_submission(result)[2], 'MISSING_STRUCTURED_SUBMISSION')
 
     def test_unsupported_invalid_json_and_arguments_visible(self):
         backend = ScriptedBackend([tool_message(('not_a_tool', {}), ('query_orders', '{'),

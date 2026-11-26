@@ -83,7 +83,13 @@ def measure_cost(result, pricing=None):
 
 
 def extract_submission(result):
-    """Only explicit model submissions count; never build an answer from tool returns."""
+    """Score model-authored allocations with runtime-computed balances when available."""
+    validated = result.get('validated_submission')
+    if validated is not None:
+        return validated['plan'], validated['source'], None
+    check = next((e for e in reversed(result.get('trace', [])) if e.get('event') == 'submission_check'), None)
+    if check is not None:
+        return check['plan'], check['source'], check['submission_error']
     text = result.get('final_text') or ''
     if '<reconciliation_result>' in text or '</reconciliation_result>' in text:
         blocks = re.findall(r'<reconciliation_result>\s*(.*?)\s*</reconciliation_result>', text, re.S)
@@ -91,7 +97,7 @@ def extract_submission(result):
             return None, 'final_json', 'INVALID_SUBMISSION_JSON'
         try:
             plan = json.loads(blocks[0])
-        except (ValueError, TypeError):
+        except (ValueError, TypeError, RecursionError):
             return None, 'final_json', 'INVALID_SUBMISSION_JSON'
         return plan, 'final_json', None
     # A validate call is itself a structured answer authored by the model.
@@ -236,6 +242,8 @@ def evaluate_results(results, visible_root, split, pricing=None):
         result.update(accuracy=float(successful), evaluation={
             'status': 'scored', 'grading_version': 'structured-plan-exact-v1', 'accuracy_definition': DEFINITION,
             'submission_source': source, 'submission_present': source is not None,
+            'submission_validated': (result['validated_submission'] is not None
+                                     if 'validated_submission' in result else metrics['validation_passed']),
             'failure_reasons': reasons, 'scores': scores, 'tool_metrics': metrics,
             'reference': {'split': split, 'category': references[task_id]['category'],
                           'rule_version': reference['rule_version'], 'sha256': source_hash},
@@ -281,6 +289,9 @@ def summarize_evaluations(results):
                            'submission_rate': sum(r['evaluation']['submission_present'] for r in scored) / count,
                            'field_accuracy': field_matched / field_total if field_total else 0,
                            'tool_validated_tasks': sum(r['evaluation']['tool_metrics']['validation_passed'] for r in scored),
+                           'submission_validated_tasks': sum(
+                               r['evaluation'].get('submission_validated', r['evaluation']['tool_metrics']['validation_passed'])
+                               for r in scored),
                            'failure_reasons': dict(Counter(reason for r in scored
                                                           for reason in r['evaluation']['failure_reasons'])),
                            'natural_language_report_scored': False}}

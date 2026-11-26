@@ -45,7 +45,7 @@ def table_cell(value):
 def render_trace(results):
     out = ['# Agent 运行轨迹（人工审阅版）',
            '此文件由真实保存记录转换；未重新调用模型或工具。完整原始字段见 traces.pretty.json，程序处理使用 traces.jsonl。',
-           '“正常结束”只表示返回最终文本；工具调用成功、方案核验通过与独立评测正确是不同状态。',
+           '新版真实模型运行在提交核验通过后正常结束。历史轨迹仍沿用原记录的停止原因。',
            '## 任务导航']
     navigation = ['| 序号 | 任务 | 停止原因 | 工具调用 | 工具报错 | 未通过的方案核验 |',
                   '| --- | --- | --- | ---: | ---: | ---: |']
@@ -101,6 +101,11 @@ def render_trace(results):
                             f'对应调用 ID：`{table_cell(event.get("tool_call_id"))}`；实际执行：{event.get("executed", False)}。',
                             '实际参数：', json_block(arguments_value(event.get('arguments'))),
                             '完整回执（不截断金额、证据或错误）：', json_block(event.get('result'))])
+            elif kind == 'submission_check':
+                result = event.get('result') or {}
+                passed = result.get('ok') and (result.get('data') or {}).get('valid') is True
+                status = '通过' if passed else '未通过'
+                out.extend([f'##### 提交核验 · {status}', json_block(event)])
             elif kind == 'model_error':
                 out.extend(['**模型调用失败**', json_block(event)])
             else:

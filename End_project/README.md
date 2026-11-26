@@ -438,7 +438,7 @@ python3 agent_cli.py --backend api --split val --limit 5 --output-dir artifacts/
 python3 agent_cli.py --backend api --profile sft --split val --limit 5 --output-dir artifacts/api_sft_val_001
 ```
 
-输出 `traces.json`（输入、模型动作、工具参数及真实回执、最终文本、停止原因、已报告token）、`summary.json` 和 `evaluation.md`。真实模型任务结束后，独立评分器读取对应train/val参考答案，填写每题 `accuracy`、`cost`、`evaluation`；参考答案不传给模型。`accuracy`是结构化方案整题精确匹配率，缺失提交计失败，另报告字段匹配率与工具成功率；中文叙述、证据引用和复核理由未自动评分。`completed`只表示返回文本。脚本烟测排除出模型准确率。
+输出 `traces.json`（输入、模型动作、工具参数及真实回执、最终文本、停止原因、已报告token）、`summary.json` 和 `evaluation.md`。真实模型任务结束后，独立评分器读取对应train/val参考答案，填写每题 `accuracy`、`cost`、`evaluation`；参考答案不传给模型。`accuracy`是结构化方案整题精确匹配率，缺失提交计失败，另报告字段匹配率与工具成功率；中文叙述、证据引用和复核理由未自动评分。真实模型须返回报告并通过运行时提交核验，才会标记 `completed`。提交可以来自 `validate_reconciliation` 调用或报告末尾的 JSON 块。模型填写订单、交易归属和复核字段，运行时计算 `balance`。未通过时返回具体业务错误，最多触发两轮提交修正，并继续遵守原有决策、步数和超时预算。`submission_rejected` 表示修正后仍未通过，原始回答和核验错误保存在轨迹中。汇总的 `submission_validated_tasks` 记录通过提交核验的题数。脚本烟测排除出模型准确率。
 
 本地 `cost.api_fee=0`，同时记录实际耗时、token和输出速度；硬件/电费未实测，可用 `--compute-price-per-hour` 配置算力估价。API费用需同时提供 `--input-price-per-million` 和 `--output-price-per-million`，币种用 `--cost-currency` 指定；缺失单价会明确标记，usage不全时只报告部分用量估算。费额是用户单价估算，不是服务商账单，不自动处理缓存折扣。`model_connected`只在真实模型返回有效助手消息后为true。缺少API配置时，在读取任务或发送请求前报错退出。
 
