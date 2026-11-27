@@ -1,0 +1,15 @@
+{
+  "pid": 51120,
+  "phase": "failed",
+  "split": "val",
+  "requested_tasks": 50,
+  "processed_tasks": 36,
+  "started_at": "2026-11-27T00:54:23.621238+08:00",
+  "current_task_id": "a7e6681e1d9210bd8266050c2521dfda",
+  "model_cleanup": {
+    "status": "closed",
+    "allocated_after_close_mib": 8.13
+  },
+  "error_type": "PermissionError",
+  "finished_at": "2026-11-27T04:46:28.279841+08:00"
+}

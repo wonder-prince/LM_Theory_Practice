@@ -1,0 +1,30 @@
+{
+    "comparison_reference":  "qwen_gpu_val50_20261126_004832",
+    "recorded_at":  "2026-11-27T08:21:28.4203667+08:00",
+    "model_revision":  "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "source_trace_sha256":  "1b0bdc7299f3426b7d961994511bb436cea6295695446274eb635dee5a38fabf",
+    "run_scope":  "val50; resume remaining 14; no training; no test inference",
+    "git_status":  [
+                       " M End_project/scripts/run_local_qwen.py",
+                       " M End_project/tests/test_local_runner.py",
+                       "?? End_project/artifacts/qwen_gpu_val50_20261127_005227/"
+                   ],
+    "sha256":  {
+                   "model_backends.py":  "5303f358c11b146b96d83d64b0221bd759888fa07bb785eee5e2d4a3af50d71f",
+                   "evaluation.py":  "460eb71f183de58306a0ecec383a495bdd238e6ddefd1db1d31dcd0373a2e1b3",
+                   "datasets/prepared/agent_visible/val/tasks.jsonl":  "ab162abef79e3f1d93f08a4a39d3f7e4e4f2656aad7f8a49475ea06eb17593fe",
+                   "agent_runtime.py":  "8a5acab430965ee5b62e34c4d72f55448947a6ba6ab2ebe939a6944c7263f62f",
+                   "requirements.lock.txt":  "0efe7f2d23c684d72913facbd436ee23a9371984d106e25f4e9a941db0fe457a",
+                   "scripts/run_local_qwen.py":  "2ed530379f1bc4c811481010af6201f6de0a77331825cc1af5353247bda6493f",
+                   "datasets/prepared/agent_visible/rules.json":  "14ce8457c3a33259fd20fd94393cb37951ac35e8fecbe4822f3dc9788b84fee7",
+                   "agent_cli.py":  "c2e84c4641ea689e7abcd891e2a8871c7d0f13541e36b4f7e0b2b58f911e8b9b",
+                   "trace_readable.py":  "5fabf5d3e2de548d3a67c2ef46e17375788b9a931f6c6db26ca1207b778260bd",
+                   "requirements-gpu.txt":  "94d186df39c8c7228b70ec3069eadea3e3346f64f38226ef17123e3e6d1192a1",
+                   "local_model_backend.py":  "d14eb90007a328637cefcd1d5da11493f1b738ef7b6f4434883fa6b057378e53",
+                   "business_tools.py":  "901bd76bf12424a25c6ae2623b731deb179138fac88c64be73a0d940ccc5f07f"
+               },
+    "resumed_tasks":  36,
+    "model":  "Qwen/Qwen3-4B-Instruct-2507",
+    "resume_source":  "qwen_gpu_val50_20261127_005227",
+    "git_commit":  "cd65a68e70810fafc150ce6d174fc1ef82422017"
+}

@@ -155,7 +155,13 @@ foreach ($file in $expectedHashes.Keys) {
 & '.\.venv-gpu\Scripts\python.exe' -X utf8 scripts/run_local_qwen.py --split val --limit 50 --timeout 600 --max-decisions 12 --max-context 16384 --max-new-tokens 2048
 ```
 
-默认输出到新建的 `artifacts/local_qwen_时间戳/`，每题结束保存一次。单题默认最多 600 秒，不含模型加载；作者历史 50 题约耗时 4 小时 19 分，仅供安排时间。运行结束后会释放模型并退出进程。中途需要停止时按 `Ctrl+C`，保留已写入结果；再次运行会新建批次，不会自动从上次进度续跑。
+默认输出到新建的 `artifacts/local_qwen_时间戳/`，每题结束保存一次。单题默认最多 600 秒，不含模型加载；作者历史 50 题约耗时 4 小时 19 分，仅供安排时间。运行结束后会释放模型并退出进程。中途需要停止时按 `Ctrl+C`，保留已写入结果。再次运行默认新建批次；如需补齐未处理的题目，可增加 `--resume-from`，同时保留原批次的切分、任务数量、预算和模型目录，并指定一个不存在的新输出目录：
+
+```powershell
+& '.\.venv-gpu\Scripts\python.exe' -X utf8 scripts/run_local_qwen.py --split val --limit 50 --timeout 600 --max-decisions 12 --max-context 16384 --max-new-tokens 2048 --resume-from artifacts/qwen_val50_interrupted --output-dir artifacts/qwen_val50_continued
+```
+
+将上面的原结果目录换成自己的路径。续跑会校验已有轨迹前缀及相关配置，将已保存题目原样载入新目录，只执行剩余任务；已保存的超时或错误题也保留原结果。Windows 上 JSON 临时文件写入/替换遇到 `PermissionError` 时，入口最多进行10次有限退避重试；持续的权限错误仍会明确报告。
 
 主要结果文件：
 

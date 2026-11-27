@@ -1,0 +1,11 @@
+{
+    "supervisor_pid":  59192,
+    "started_at":  "2026-11-27T00:54:23.4332012+08:00",
+    "result_dir":  "D:\\All_ws\\LM_Theory_Practice\\End_project\\artifacts\\qwen_gpu_val50_20261127_005227",
+    "cuda_context_released_by_worker_exit":  true,
+    "phase":  "exited",
+    "finished_at":  "2026-11-27T04:46:36.3070036+08:00",
+    "exit_code":  1,
+    "worker_launcher_pid":  61040,
+    "requested_tasks":  50
+}

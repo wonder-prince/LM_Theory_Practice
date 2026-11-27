@@ -1,0 +1,173 @@
+{
+  "coverage": "complete",
+  "requested_tasks": 50,
+  "processed_tasks": 50,
+  "current_directory": "qwen_gpu_val50_20261127_completed_081945",
+  "previous_directory": "qwen_gpu_val50_20261126_004832",
+  "partial_run_directory": "qwen_gpu_val50_20261127_005227",
+  "resumed_tasks": 36,
+  "newly_run_tasks": 14,
+  "current": {
+    "tasks": 50,
+    "correct_tasks": 16,
+    "accuracy": 0.32,
+    "matched_fields": 542,
+    "total_fields": 1134,
+    "field_accuracy": 0.47795414462081126,
+    "successful_calls": 260,
+    "executed_calls": 393,
+    "tool_success_rate": 0.6615776081424937,
+    "stop_reasons": {
+      "completed": 16,
+      "timeout": 14,
+      "decision_budget": 14,
+      "submission_rejected": 6
+    }
+  },
+  "previous_same_tasks": {
+    "tasks": 50,
+    "correct_tasks": 0,
+    "accuracy": 0.0,
+    "matched_fields": 284,
+    "total_fields": 1134,
+    "field_accuracy": 0.25044091710758376,
+    "successful_calls": 213,
+    "executed_calls": 299,
+    "tool_success_rate": 0.7123745819397993,
+    "stop_reasons": {
+      "timeout": 8,
+      "completed": 40,
+      "api_error:LOCAL_OUTPUT_LIMIT": 1,
+      "decision_budget": 1
+    }
+  },
+  "change_percentage_points": {
+    "accuracy": 32.0,
+    "field_accuracy": 22.75132275132275,
+    "tool_success_rate": -5.079697379730563
+  },
+  "by_request_mode": {
+    "period_batch": {
+      "tasks": 22,
+      "correct_tasks": 0,
+      "accuracy": 0.0,
+      "matched_fields": 207,
+      "total_fields": 770,
+      "field_accuracy": 0.2688311688311688,
+      "successful_calls": 138,
+      "executed_calls": 227,
+      "tool_success_rate": 0.6079295154185022,
+      "stop_reasons": {
+        "timeout": 7,
+        "decision_budget": 14,
+        "submission_rejected": 1
+      }
+    },
+    "single_order": {
+      "tasks": 28,
+      "correct_tasks": 16,
+      "accuracy": 0.5714285714285714,
+      "matched_fields": 335,
+      "total_fields": 364,
+      "field_accuracy": 0.9203296703296703,
+      "successful_calls": 122,
+      "executed_calls": 166,
+      "tool_success_rate": 0.7349397590361446,
+      "stop_reasons": {
+        "completed": 16,
+        "timeout": 7,
+        "submission_rejected": 5
+      }
+    }
+  },
+  "by_category": {
+    "basic": {
+      "tasks": 17,
+      "correct_tasks": 9,
+      "accuracy": 0.5294117647058824,
+      "matched_fields": 183,
+      "total_fields": 353,
+      "field_accuracy": 0.5184135977337111,
+      "successful_calls": 93,
+      "executed_calls": 136,
+      "tool_success_rate": 0.6838235294117647,
+      "stop_reasons": {
+        "completed": 9,
+        "decision_budget": 4,
+        "timeout": 4
+      }
+    },
+    "boundary": {
+      "tasks": 16,
+      "correct_tasks": 6,
+      "accuracy": 0.375,
+      "matched_fields": 221,
+      "total_fields": 318,
+      "field_accuracy": 0.6949685534591195,
+      "successful_calls": 73,
+      "executed_calls": 110,
+      "tool_success_rate": 0.6636363636363637,
+      "stop_reasons": {
+        "completed": 6,
+        "decision_budget": 3,
+        "submission_rejected": 3,
+        "timeout": 4
+      }
+    },
+    "cross_tool": {
+      "tasks": 17,
+      "correct_tasks": 1,
+      "accuracy": 0.058823529411764705,
+      "matched_fields": 138,
+      "total_fields": 463,
+      "field_accuracy": 0.2980561555075594,
+      "successful_calls": 94,
+      "executed_calls": 147,
+      "tool_success_rate": 0.6394557823129252,
+      "stop_reasons": {
+        "timeout": 6,
+        "decision_budget": 7,
+        "completed": 1,
+        "submission_rejected": 3
+      }
+    }
+  },
+  "tool_calls_by_name": {
+    "query_orders": 78,
+    "search_receipts": 96,
+    "query_refunds": 58,
+    "find_match_candidates": 95,
+    "get_transaction_evidence": 66
+  },
+  "tool_error_codes": {
+    "INVALID_ARGUMENT": 32,
+    "TRANSACTION_UNAVAILABLE": 101
+  },
+  "field_mismatches": {
+    "expected_cents": 38,
+    "received_cents": 63,
+    "refunded_cents": 40,
+    "pending_refund_cents": 40,
+    "net_cents": 63,
+    "collection_gap_cents": 63,
+    "net_vs_original_cents": 63,
+    "receipt_ids": 63,
+    "refund_ids": 39,
+    "pending_refund_ids": 40,
+    "review": 46
+  },
+  "exact_plan_but_not_completed_task_ids": [
+    "7f997d6ed7aa6422de146a5b31739cf0",
+    "bd5d5f9c3276a58df77a2419a5efad6c",
+    "01b486c3b0d11490d9b3d0369b87ebd4"
+  ],
+  "submission_checks": 78,
+  "submission_validated_tasks": 16,
+  "task_elapsed_seconds": 17861.025,
+  "initial_run_wall_seconds": 13924.658603,
+  "resume_wall_seconds": 3980.515808,
+  "combined_active_wall_seconds": 17905.174411,
+  "same_inference_budget": true,
+  "agent_runtime_changed": true,
+  "interpretation": "同题同基模的Agent流程对照；新提示词、程序计算余额、提交核验和反馈修正均有变化。原36题加续跑14题，两次加载模型。不是训练前后对照。"
+}

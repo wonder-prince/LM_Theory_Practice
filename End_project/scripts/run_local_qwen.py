@@ -1,6 +1,7 @@
 """在本机 GPU 上运行 Qwen3 4bit Agent；不使用外部 API、不训练。"""
 import argparse
 from datetime import datetime
+import hashlib
 import json
 import logging
 import os
@@ -23,8 +24,48 @@ from evaluation import (add_evaluation_arguments, evaluate_results, pricing_from
 
 def write_json(path, value):
     temporary = path.with_name(path.name + '.tmp')
-    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    temporary.replace(path)
+    payload = json.dumps(value, ensure_ascii=False, indent=2) + '\n'
+    for attempt in range(10):
+        try:
+            temporary.write_text(payload, encoding='utf-8')
+            temporary.replace(path)
+            return
+        except PermissionError:
+            # Windows readers/scanners can briefly deny FILE_SHARE_DELETE.
+            if attempt == 9:
+                raise
+            time.sleep(min(.05 * 2 ** attempt, 1.0))
+
+
+def load_resume(directory, tasks, args, budget, rules):
+    manifest = json.loads((directory / 'run_manifest.json').read_text(encoding='utf-8'))
+    previous_args = manifest['arguments']
+    keys = ('split', 'max_context', 'max_new_tokens', 'max_decisions', 'timeout',
+            'input_price_per_million', 'output_price_per_million',
+            'compute_price_per_hour', 'cost_currency')
+    if any(previous_args.get(key) != getattr(args, key) for key in keys):
+        raise ValueError('续跑必须保持原切分、推理预算与费用配置')
+    if Path(previous_args['model_dir']).resolve() != args.model_dir.resolve():
+        raise ValueError('续跑必须使用原模型目录')
+    if manifest['budget'] != asdict(budget) or manifest['task_ids'] != [t['task_id'] for t in tasks]:
+        raise ValueError('续跑任务列表或调用预算与原批次不一致')
+    results = json.loads((directory / 'traces.json').read_text(encoding='utf-8'))
+    if not isinstance(results, list) or [r['task_id'] for r in results] != manifest['task_ids'][:len(results)]:
+        raise ValueError('已有轨迹必须是原任务列表的有序前缀')
+    if len(results) >= len(tasks):
+        raise ValueError('原批次已经处理全部任务，无需续跑')
+    for result, task in zip(results, tasks):
+        if result['input'].get('scope') != task['query'] or result['input'].get('rules') != rules:
+            raise ValueError('已有轨迹的任务范围或规则与当前数据不一致')
+    provenance = directory / 'source_provenance.json'
+    if provenance.exists():
+        for name, expected in json.loads(provenance.read_text(encoding='utf-8'))['sha256'].items():
+            # Only the batch runner may change to add checkpoint recovery.
+            if name == 'scripts/run_local_qwen.py':
+                continue
+            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+                raise ValueError('续跑所用源码/数据已变化：' + name)
+    return results
 
 
 def run_task(task, visible, split, rules, backend, budget):
@@ -57,6 +98,7 @@ def main():
     parser.add_argument('--max-new-tokens', type=int, default=2048)
     parser.add_argument('--max-decisions', type=int, default=12)
     parser.add_argument('--timeout', type=float, default=600)
+    parser.add_argument('--resume-from', type=Path, help='读取原批次已保存前缀，仅执行剩余题；写入新的输出目录')
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'artifacts' /
                         ('local_qwen_' + datetime.now().strftime('%Y%m%d_%H%M%S_%f')))
     add_evaluation_arguments(parser)
@@ -73,11 +115,16 @@ def main():
     budget = Budget(max_decisions=args.max_decisions, timeout_seconds=args.timeout)
     logging.basicConfig(format='%(asctime)s %(message)s', level=logging.WARNING)
     logging.getLogger('local_model_backend').setLevel(logging.INFO)
-    results = []
+    try:
+        results = load_resume(args.resume_from, tasks, args, budget, rules) if args.resume_from else []
+    except (ValueError, KeyError, TypeError, OSError) as exc:
+        parser.error('无法续跑：' + str(exc))
+    resumed_tasks = len(results)
     backend = None
     args.output_dir.mkdir(parents=True, exist_ok=False)
     status = {'pid': os.getpid(), 'phase': 'loading_model', 'split': args.split,
-              'requested_tasks': len(tasks), 'processed_tasks': 0,
+              'requested_tasks': len(tasks), 'processed_tasks': resumed_tasks,
+              'resumed_tasks': resumed_tasks,
               'started_at': datetime.now().astimezone().isoformat(), 'current_task_id': None,
               'model_cleanup': {'status': 'pending'}}
     write_json(args.output_dir / 'run_status.json', status)
@@ -101,7 +148,7 @@ def main():
         backend = LocalQwenBackend(args.model_dir, args.max_context, args.max_new_tokens)
         status['phase'] = 'running'
         save()
-        for index, task in enumerate(tasks, 1):
+        for index, task in enumerate(tasks[resumed_tasks:], resumed_tasks + 1):
             status['current_task_id'] = task['task_id']
             status['processed_tasks'] = len(results)
             write_json(args.output_dir / 'run_status.json', status)

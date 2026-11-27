@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "verified_at": "2026-11-27T09:28:36.985250+08:00",
+  "scope": "offline only; no additional model calls",
+  "processed_tasks": 50,
+  "all_manifest_task_ids_present_once_in_order": true,
+  "initial_36_result_objects_preserved_exactly": true,
+  "initial_trace_sha256_matches_resume_provenance": true,
+  "stored_scores_equal_offline_rescoring": true,
+  "same50_scopes_and_inference_budgets_match_history": true,
+  "model_closed": true,
+  "source_sha256_matches_launch_record": {
+    "model_backends.py": true,
+    "evaluation.py": true,
+    "datasets/prepared/agent_visible/val/tasks.jsonl": true,
+    "agent_runtime.py": true,
+    "requirements.lock.txt": true,
+    "scripts/run_local_qwen.py": true,
+    "datasets/prepared/agent_visible/rules.json": true,
+    "agent_cli.py": true,
+    "trace_readable.py": true,
+    "requirements-gpu.txt": true,
+    "local_model_backend.py": true,
+    "business_tools.py": true
+  }
+}

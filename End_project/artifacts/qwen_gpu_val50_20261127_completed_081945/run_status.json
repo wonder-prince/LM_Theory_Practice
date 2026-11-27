@@ -1,0 +1,15 @@
+{
+  "pid": 57260,
+  "phase": "finished",
+  "split": "val",
+  "requested_tasks": 50,
+  "processed_tasks": 50,
+  "resumed_tasks": 36,
+  "started_at": "2026-11-27T08:21:28.894717+08:00",
+  "current_task_id": null,
+  "model_cleanup": {
+    "status": "closed",
+    "allocated_after_close_mib": 8.13
+  },
+  "finished_at": "2026-11-27T09:27:49.410525+08:00"
+}

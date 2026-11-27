@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-11-27T08:17:17.389204+08:00",
+  "status": "passed",
+  "scope": "offline archive verification; no model calls",
+  "processed_tasks": 36,
+  "requested_tasks": 50,
+  "traces_summary_status_counts_and_ids_match": true,
+  "processed_ids_are_manifest_prefix": true,
+  "stored_scores_equal_offline_rescoring": true,
+  "paired_old_task_scopes_match": true,
+  "inference_budgets_match": true,
+  "source_sha256_matches_launch_record": {
+    "model_backends.py": true,
+    "evaluation.py": true,
+    "datasets/prepared/agent_visible/val/tasks.jsonl": true,
+    "agent_runtime.py": true,
+    "requirements.lock.txt": true,
+    "scripts/run_local_qwen.py": true,
+    "datasets/prepared/agent_visible/rules.json": true,
+    "agent_cli.py": true,
+    "trace_readable.py": true,
+    "requirements-gpu.txt": true,
+    "local_model_backend.py": true,
+    "business_tools.py": true
+  },
+  "original_files_unchanged": {
+    "summary.json": "aad744f486ae00871bb88d2ad499259ca04d300e30b2b824df22e0abfdce0dfa",
+    "traces.json": "1b0bdc7299f3426b7d961994511bb436cea6295695446274eb635dee5a38fabf",
+    "traces.md": "dc4abc9d31ddc01196e42c9dbde09dd1b51747389c2be8e07c84b62e8339c86c",
+    "evaluation.md": "ef321e9b08a39afc0118637f42beb71e2b7a4ba9204df7e93f9e7c923105c58d",
+    "run_status.json": "647c97b36efaddd6487b68b43e81119815a4ea000bb5548b107596eea74f9aca",
+    "run_manifest.json": "fe760b88f1b423ef0b3e13e54c6cd48e5ed3511dba18283adef7a71487a4efe5",
+    "process_status.json": "8d5ba743d5cd30e32cccbcf8f578cf9474983a2e088931f59ef3d65374b278df",
+    "stdout.log": "13996333f4631f3d9e74d347b9b6ed616b1cba7f7d23f9aa77af961f351cf9f2",
+    "stderr.log": "8781967626865e45c460f505862b61e785d44db199af7cf690911ddf74f8c003",
+    "environment.txt": "98b978e37e3dd65615fd687ccd4fd927dbf5a08e8222a8ccce33080944640bf6",
+    "source_provenance.json": "a58235c4d3e3cd799b5550a0cf1355a0801f3a84ac8fc39c732f1c97c5a331a0"
+  }
+}

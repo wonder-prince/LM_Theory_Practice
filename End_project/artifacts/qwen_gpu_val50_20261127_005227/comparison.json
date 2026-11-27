@@ -1,0 +1,205 @@
+{
+  "current_directory": "qwen_gpu_val50_20261127_005227",
+  "previous_directory": "qwen_gpu_val50_20261126_004832",
+  "coverage": "partial",
+  "requested_tasks": 50,
+  "processed_tasks": 36,
+  "unprocessed_task_ids": [
+    "a7e6681e1d9210bd8266050c2521dfda",
+    "fb0a91987e06dd6996b831fc7a3d9ed1",
+    "035929229afc58f1cf56283b97daecbd",
+    "fe24f5375fed04e7472a53d33c16a262",
+    "ebe4143e309a9a9038e50351c7ab085c",
+    "6ae2b64ff8bae46b5b50aa337ff5fcd2",
+    "d270f3bb50f36763edbe7164838994a0",
+    "c30f0286048da88d1ed30e915fb97033",
+    "eb9a2829dc13548b19b940cb0ae39d0e",
+    "884760a57d04feae53a54d836898f65f",
+    "4c77bf5bb2f45b005286192ffad584f0",
+    "e4687b3effc9622e2070c12b75a65212",
+    "7ceb1db6f097025c0d80ec6faff76a88",
+    "71bf919b9f8768e6932b17b6233317c3"
+  ],
+  "comparison_scope": "same 36 task IDs in original manifest order; remaining 14 not run",
+  "same_inference_budget": true,
+  "agent_runtime_changed": true,
+  "interpretation": "Agent流程对照，包含模型提示、余额计算、提交核验和错误反馈变化；不是训练前后对照。工具成功率仅统计模型显式调用。",
+  "current": {
+    "tasks": 36,
+    "correct_tasks": 11,
+    "accuracy": 0.3055555555555556,
+    "matched_fields": 427,
+    "total_fields": 820,
+    "field_accuracy": 0.5207317073170732,
+    "successful_calls": 183,
+    "executed_calls": 279,
+    "tool_success_rate": 0.6559139784946236,
+    "stop_reasons": {
+      "completed": 11,
+      "timeout": 11,
+      "decision_budget": 10,
+      "submission_rejected": 4
+    }
+  },
+  "previous_same_tasks": {
+    "tasks": 36,
+    "correct_tasks": 0,
+    "accuracy": 0.0,
+    "matched_fields": 157,
+    "total_fields": 820,
+    "field_accuracy": 0.19146341463414634,
+    "successful_calls": 151,
+    "executed_calls": 216,
+    "tool_success_rate": 0.6990740740740741,
+    "stop_reasons": {
+      "timeout": 8,
+      "completed": 27,
+      "api_error:LOCAL_OUTPUT_LIMIT": 1
+    }
+  },
+  "previous_full50_context_only": {
+    "tasks": 50,
+    "correct_tasks": 0,
+    "accuracy": 0.0,
+    "matched_fields": 284,
+    "total_fields": 1134,
+    "field_accuracy": 0.25044091710758376,
+    "successful_calls": 213,
+    "executed_calls": 299,
+    "tool_success_rate": 0.7123745819397993,
+    "stop_reasons": {
+      "timeout": 8,
+      "completed": 40,
+      "api_error:LOCAL_OUTPUT_LIMIT": 1,
+      "decision_budget": 1
+    }
+  },
+  "paired_change_percentage_points": {
+    "accuracy": 30.555555555555557,
+    "field_accuracy": 32.926829268292686,
+    "tool_success_rate": -4.316009557945044
+  },
+  "by_request_mode": {
+    "period_batch": {
+      "tasks": 16,
+      "correct_tasks": 0,
+      "accuracy": 0.0,
+      "matched_fields": 187,
+      "total_fields": 560,
+      "field_accuracy": 0.3339285714285714,
+      "successful_calls": 97,
+      "executed_calls": 161,
+      "tool_success_rate": 0.6024844720496895,
+      "stop_reasons": {
+        "timeout": 5,
+        "decision_budget": 10,
+        "submission_rejected": 1
+      }
+    },
+    "single_order": {
+      "tasks": 20,
+      "correct_tasks": 11,
+      "accuracy": 0.55,
+      "matched_fields": 240,
+      "total_fields": 260,
+      "field_accuracy": 0.9230769230769231,
+      "successful_calls": 86,
+      "executed_calls": 118,
+      "tool_success_rate": 0.7288135593220338,
+      "stop_reasons": {
+        "completed": 11,
+        "timeout": 6,
+        "submission_rejected": 3
+      }
+    }
+  },
+  "by_category": {
+    "basic": {
+      "tasks": 12,
+      "correct_tasks": 6,
+      "accuracy": 0.5,
+      "matched_fields": 124,
+      "total_fields": 244,
+      "field_accuracy": 0.5081967213114754,
+      "successful_calls": 67,
+      "executed_calls": 97,
+      "tool_success_rate": 0.6907216494845361,
+      "stop_reasons": {
+        "completed": 6,
+        "decision_budget": 3,
+        "timeout": 3
+      }
+    },
+    "boundary": {
+      "tasks": 12,
+      "correct_tasks": 4,
+      "accuracy": 0.3333333333333333,
+      "matched_fields": 188,
+      "total_fields": 244,
+      "field_accuracy": 0.7704918032786885,
+      "successful_calls": 53,
+      "executed_calls": 81,
+      "tool_success_rate": 0.654320987654321,
+      "stop_reasons": {
+        "completed": 4,
+        "decision_budget": 2,
+        "submission_rejected": 2,
+        "timeout": 4
+      }
+    },
+    "cross_tool": {
+      "tasks": 12,
+      "correct_tasks": 1,
+      "accuracy": 0.08333333333333333,
+      "matched_fields": 115,
+      "total_fields": 332,
+      "field_accuracy": 0.3463855421686747,
+      "successful_calls": 63,
+      "executed_calls": 101,
+      "tool_success_rate": 0.6237623762376238,
+      "stop_reasons": {
+        "timeout": 4,
+        "decision_budget": 5,
+        "completed": 1,
+        "submission_rejected": 2
+      }
+    }
+  },
+  "tool_calls_by_name": {
+    "query_orders": 56,
+    "search_receipts": 68,
+    "query_refunds": 38,
+    "find_match_candidates": 67,
+    "get_transaction_evidence": 50
+  },
+  "tool_error_codes": {
+    "INVALID_ARGUMENT": 22,
+    "TRANSACTION_UNAVAILABLE": 74
+  },
+  "field_mismatches": {
+    "expected_cents": 23,
+    "received_cents": 44,
+    "refunded_cents": 25,
+    "pending_refund_cents": 25,
+    "net_cents": 44,
+    "collection_gap_cents": 44,
+    "net_vs_original_cents": 44,
+    "receipt_ids": 44,
+    "refund_ids": 23,
+    "pending_refund_ids": 25,
+    "review": 29
+  },
+  "exact_plan_but_not_completed_task_ids": [
+    "7f997d6ed7aa6422de146a5b31739cf0",
+    "bd5d5f9c3276a58df77a2419a5efad6c",
+    "01b486c3b0d11490d9b3d0369b87ebd4"
+  ],
+  "submission_checks": 59,
+  "submission_validated_tasks": 11,
+  "wall_seconds": 13924.658603,
+  "task_elapsed_seconds": 13900.902,
+  "model_cleanup": {
+    "status": "closed",
+    "allocated_after_close_mib": 8.13
+  }
+}

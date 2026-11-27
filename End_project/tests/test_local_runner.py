@@ -21,12 +21,77 @@ def task(index):
 
 def row(index):
     return {'task_id': str(index), 'kind': 'scripted_mock', 'model_connected': False,
-            'config': {}, 'input': {}, 'trace': [], 'messages': [], 'final_text': 'fixture',
+            'config': {}, 'input': {'scope': task(index)['query'], 'rules': {}},
+            'trace': [], 'messages': [], 'final_text': 'fixture',
             'stop_reason': 'completed', 'decisions': 1, 'tool_calls': 0, 'steps': 1,
             'elapsed_seconds': .01, 'token_usage': None, 'token_usage_complete': False}
 
 
 class RunnerLifecycleTests(unittest.TestCase):
+    def test_checkpoint_retries_a_temporary_windows_file_lock(self):
+        original_replace = Path.replace
+        attempts = []
+
+        def replace(source, target):
+            attempts.append(source)
+            if len(attempts) == 1:
+                self.assertEqual(json.loads(target.read_text(encoding='utf-8')), {'old': True})
+                raise PermissionError('temporary Windows file lock')
+            return original_replace(source, target)
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'status.json'
+            path.write_text('{"old": true}', encoding='utf-8')
+            with patch.object(Path, 'replace', replace), patch.object(runner.time, 'sleep') as sleep:
+                runner.write_json(path, {'new': True})
+            self.assertEqual(json.loads(path.read_text(encoding='utf-8')), {'new': True})
+            self.assertFalse(path.with_name(path.name + '.tmp').exists())
+            sleep.assert_called_once_with(.05)
+
+    def test_checkpoint_permanent_permission_failure_has_bounded_retries(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'status.json'
+            path.write_text('{"old": true}', encoding='utf-8')
+            with patch.object(Path, 'replace', side_effect=PermissionError('locked')) as replace, \
+                 patch.object(runner.time, 'sleep') as sleep, self.assertRaises(PermissionError):
+                runner.write_json(path, {'new': True})
+            self.assertEqual(replace.call_count, 10)
+            self.assertEqual(sleep.call_count, 9)
+            self.assertEqual(json.loads(path.read_text(encoding='utf-8')), {'old': True})
+
+    def test_resume_keeps_saved_rows_and_runs_only_remaining_tasks(self):
+        backend = Mock(kind='scripted_mock')
+        backend.metadata.return_value = {'model': 'mock-only'}
+        backend.close.return_value = {'status': 'closed'}
+        with tempfile.TemporaryDirectory() as directory:
+            previous, output = Path(directory) / 'previous', Path(directory) / 'continued'
+            argv = ['run_local_qwen.py', '--limit', '5', '--output-dir', str(previous)]
+            with patch.object(sys, 'argv', argv), patch.object(runner, 'LocalQwenBackend', return_value=backend), \
+                 patch.object(runner, 'load_tasks', return_value=([task(i) for i in range(5)], {})), \
+                 patch.object(runner, 'run_task', side_effect=[row(0), row(1), ValueError('interrupted')]), \
+                 contextlib.redirect_stdout(io.StringIO()), self.assertRaises(ValueError):
+                runner.main()
+            saved = (previous / 'traces.json').read_bytes()
+            argv = ['run_local_qwen.py', '--limit', '5', '--resume-from', str(previous), '--output-dir', str(output)]
+            with patch.object(sys, 'argv', argv), patch.object(runner, 'LocalQwenBackend', return_value=backend), \
+                 patch.object(runner, 'load_tasks', return_value=([task(i) for i in range(5)], {})), \
+                 patch.object(runner, 'run_task', side_effect=[row(2), row(3), row(4)]) as execute, \
+                 contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(runner.main(), 0)
+            self.assertEqual([call.args[0]['task_id'] for call in execute.call_args_list], ['2', '3', '4'])
+            self.assertEqual((previous / 'traces.json').read_bytes(), saved)
+            self.assertEqual(json.loads((output / 'traces.json').read_text(encoding='utf-8'))[:2], json.loads(saved))
+            state = json.loads((output / 'run_status.json').read_text(encoding='utf-8'))
+            self.assertEqual((state['phase'], state['processed_tasks'], state['resumed_tasks']), ('finished', 5, 2))
+            changed = Path(directory) / 'changed'
+            argv = argv[:-1] + [str(changed), '--max-decisions', '13']
+            with patch.object(sys, 'argv', argv), patch.object(runner, 'LocalQwenBackend') as load, \
+                 patch.object(runner, 'load_tasks', return_value=([task(i) for i in range(5)], {})), \
+                 contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
+                runner.main()
+            load.assert_not_called()
+            self.assertFalse(changed.exists())
+
     def test_all_50_are_checkpointed_and_model_is_closed(self):
         backend = Mock(kind='scripted_mock')
         backend.metadata.return_value = {'model': 'mock-only'}

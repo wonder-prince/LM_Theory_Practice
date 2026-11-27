@@ -1,0 +1,55 @@
+加载本地模型：D:\All_ws\LM_Theory_Practice\End_project\models\Qwen3-4B-Instruct-2507
+[37/50] a7e6681e1d9210bd8266050c2521dfda (single_order)
+{"task_id": "a7e6681e1d9210bd8266050c2521dfda", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 408.281, "tool_errors": 1}
+[38/50] fb0a91987e06dd6996b831fc7a3d9ed1 (period_batch)
+{"task_id": "fb0a91987e06dd6996b831fc7a3d9ed1", "stop_reason": "timeout", "accuracy": 0.0, "elapsed_seconds": 600.407, "tool_errors": 0}
+[39/50] 035929229afc58f1cf56283b97daecbd (single_order)
+{"task_id": "035929229afc58f1cf56283b97daecbd", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 503.234, "tool_errors": 3}
+[40/50] fe24f5375fed04e7472a53d33c16a262 (period_batch)
+{"task_id": "fe24f5375fed04e7472a53d33c16a262", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 132.922, "tool_errors": 2}
+[41/50] ebe4143e309a9a9038e50351c7ab085c (single_order)
+{"task_id": "ebe4143e309a9a9038e50351c7ab085c", "stop_reason": "timeout", "accuracy": 0.0, "elapsed_seconds": 600.125, "tool_errors": 1}
+[42/50] 6ae2b64ff8bae46b5b50aa337ff5fcd2 (period_batch)
+{"task_id": "6ae2b64ff8bae46b5b50aa337ff5fcd2", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 65.0, "tool_errors": 4}
+[43/50] d270f3bb50f36763edbe7164838994a0 (single_order)
+{"task_id": "d270f3bb50f36763edbe7164838994a0", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 165.0, "tool_errors": 2}
+[44/50] c30f0286048da88d1ed30e915fb97033 (period_batch)
+{"task_id": "c30f0286048da88d1ed30e915fb97033", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 46.953, "tool_errors": 9}
+[45/50] eb9a2829dc13548b19b940cb0ae39d0e (single_order)
+{"task_id": "eb9a2829dc13548b19b940cb0ae39d0e", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 81.234, "tool_errors": 1}
+[46/50] 884760a57d04feae53a54d836898f65f (single_order)
+{"task_id": "884760a57d04feae53a54d836898f65f", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 94.828, "tool_errors": 2}
+[47/50] 4c77bf5bb2f45b005286192ffad584f0 (period_batch)
+{"task_id": "4c77bf5bb2f45b005286192ffad584f0", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 72.484, "tool_errors": 4}
+[48/50] e4687b3effc9622e2070c12b75a65212 (single_order)
+{"task_id": "e4687b3effc9622e2070c12b75a65212", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 75.0, "tool_errors": 1}
+[49/50] 7ceb1db6f097025c0d80ec6faff76a88 (period_batch)
+{"task_id": "7ceb1db6f097025c0d80ec6faff76a88", "stop_reason": "timeout", "accuracy": 0.0, "elapsed_seconds": 600.39, "tool_errors": 6}
+[50/50] 71bf919b9f8768e6932b17b6233317c3 (single_order)
+{"task_id": "71bf919b9f8768e6932b17b6233317c3", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 514.265, "tool_errors": 1}
+模型清理：{"status": "closed", "allocated_after_close_mib": 8.13}
+{
+  "tasks": 50,
+  "accuracy": 0.32,
+  "cost": {
+    "currency": "USD",
+    "api_fee": 0.0,
+    "api_fee_status": "see_task_costs",
+    "compute_fee_estimate": null,
+    "compute_fee_status": "not_configured_for_all_tasks",
+    "elapsed_seconds": 17861.025,
+    "reported_token_usage": {
+      "prompt_tokens": 1557793,
+      "completion_tokens": 101334,
+      "total_tokens": 1659127
+    },
+    "token_usage_complete": false
+  },
+  "stop_reasons": {
+    "completed": 16,
+    "timeout": 14,
+    "decision_budget": 14,
+    "submission_rejected": 6
+  }
+}
+完整结果：D:\All_ws\LM_Theory_Practice\End_project\artifacts\qwen_gpu_val50_20261127_completed_081945
