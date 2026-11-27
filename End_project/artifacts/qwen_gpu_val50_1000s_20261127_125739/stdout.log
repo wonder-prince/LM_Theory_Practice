@@ -1,0 +1,127 @@
+加载本地模型：D:\All_ws\LM_Theory_Practice\End_project\models\Qwen3-4B-Instruct-2507
+[1/50] 21c3d4e5a0614191e11d55713232e4db (single_order)
+{"task_id": "21c3d4e5a0614191e11d55713232e4db", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 422.625, "tool_errors": 1}
+[2/50] bf813189fc6640c45b548696cc9b4219 (period_batch)
+{"task_id": "bf813189fc6640c45b548696cc9b4219", "stop_reason": "timeout", "accuracy": 0.0, "elapsed_seconds": 1000.281, "tool_errors": 6}
+[3/50] ed909817f48b358af93551a9f0c7751a (single_order)
+{"task_id": "ed909817f48b358af93551a9f0c7751a", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 56.0, "tool_errors": 1}
+[4/50] 468468e59dc4ee94b5a2c0c5da79e4bc (period_batch)
+{"task_id": "468468e59dc4ee94b5a2c0c5da79e4bc", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 77.875, "tool_errors": 5}
+[5/50] 5fc8bf28eec5253836d17a8fb1ed18da (single_order)
+{"task_id": "5fc8bf28eec5253836d17a8fb1ed18da", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 658.593, "tool_errors": 3}
+[6/50] 479170a1ca62896400a0e197f6b2fdeb (period_batch)
+{"task_id": "479170a1ca62896400a0e197f6b2fdeb", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 125.719, "tool_errors": 3}
+[7/50] 7f997d6ed7aa6422de146a5b31739cf0 (single_order)
+{"task_id": "7f997d6ed7aa6422de146a5b31739cf0", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 134.406, "tool_errors": 1}
+[8/50] 3ddbe5aad5849a4d24754cdbc8498bc7 (period_batch)
+{"task_id": "3ddbe5aad5849a4d24754cdbc8498bc7", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 116.172, "tool_errors": 6}
+[9/50] d2b7626c6102419a57fc610c02142024 (single_order)
+{"task_id": "d2b7626c6102419a57fc610c02142024", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 185.468, "tool_errors": 3}
+[10/50] 434488fe8701e3af19135e318acc42ca (single_order)
+{"task_id": "434488fe8701e3af19135e318acc42ca", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 81.891, "tool_errors": 1}
+[11/50] 57fa52b1095d682898df7fa9d77ec043 (period_batch)
+{"task_id": "57fa52b1095d682898df7fa9d77ec043", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 114.453, "tool_errors": 3}
+[12/50] 8a91d6131c96cfd5abf66c6bd985f2f6 (single_order)
+{"task_id": "8a91d6131c96cfd5abf66c6bd985f2f6", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 99.172, "tool_errors": 1}
+[13/50] cffa67df53c4fdefeabe3a84dbe67ae1 (period_batch)
+{"task_id": "cffa67df53c4fdefeabe3a84dbe67ae1", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 365.89, "tool_errors": 3}
+[14/50] bd5d5f9c3276a58df77a2419a5efad6c (single_order)
+{"task_id": "bd5d5f9c3276a58df77a2419a5efad6c", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 343.859, "tool_errors": 1}
+[15/50] 6d55f5c4bbf5103dbba06e87cac23b9c (period_batch)
+{"task_id": "6d55f5c4bbf5103dbba06e87cac23b9c", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 613.844, "tool_errors": 6}
+[16/50] 75216dd2720419476f3d29de0d924992 (single_order)
+{"task_id": "75216dd2720419476f3d29de0d924992", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 155.391, "tool_errors": 1}
+[17/50] 8cd876aedfccd2c3e723c499c8ca29ba (period_batch)
+{"task_id": "8cd876aedfccd2c3e723c499c8ca29ba", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 109.171, "tool_errors": 6}
+[18/50] 330a87c29959c593780eacca69429c78 (single_order)
+{"task_id": "330a87c29959c593780eacca69429c78", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 121.375, "tool_errors": 1}
+[19/50] f18646ac434add104caf416811a73193 (single_order)
+{"task_id": "f18646ac434add104caf416811a73193", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 164.5, "tool_errors": 2}
+[20/50] e77a7d0e9aa1818c036bbec6afafbcb6 (period_batch)
+{"task_id": "e77a7d0e9aa1818c036bbec6afafbcb6", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 214.016, "tool_errors": 2}
+[21/50] 74a7fa70d9396ddf3d5ac116e84017da (single_order)
+{"task_id": "74a7fa70d9396ddf3d5ac116e84017da", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 225.234, "tool_errors": 3}
+[22/50] c4f31b0cd50d13bde1a9b4eb712008dc (period_batch)
+{"task_id": "c4f31b0cd50d13bde1a9b4eb712008dc", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 105.485, "tool_errors": 2}
+[23/50] 30a7a37087ff15f5fc67b95c6eaba71e (single_order)
+{"task_id": "30a7a37087ff15f5fc67b95c6eaba71e", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 104.75, "tool_errors": 1}
+[24/50] 1e9c2bdb06a0d03adfc9f4a70b9819b6 (period_batch)
+{"task_id": "1e9c2bdb06a0d03adfc9f4a70b9819b6", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 163.859, "tool_errors": 2}
+[25/50] d06f45da76c85fcfc23c4e286e2e14d6 (single_order)
+{"task_id": "d06f45da76c85fcfc23c4e286e2e14d6", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 69.313, "tool_errors": 1}
+[26/50] d2b82257bd75cfa1b5ff7e950720c472 (period_batch)
+{"task_id": "d2b82257bd75cfa1b5ff7e950720c472", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 159.875, "tool_errors": 2}
+[27/50] 8edf039760facb291bb29f04aa0bc78d (single_order)
+{"task_id": "8edf039760facb291bb29f04aa0bc78d", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 237.469, "tool_errors": 1}
+[28/50] 01b486c3b0d11490d9b3d0369b87ebd4 (single_order)
+{"task_id": "01b486c3b0d11490d9b3d0369b87ebd4", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 320.437, "tool_errors": 2}
+[29/50] 04e52fd7f0d95f9b37f1bc9759c00f0d (period_batch)
+{"task_id": "04e52fd7f0d95f9b37f1bc9759c00f0d", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 165.515, "tool_errors": 3}
+[30/50] 77d7162fc3232d686b084d11504819d3 (single_order)
+{"task_id": "77d7162fc3232d686b084d11504819d3", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 130.343, "tool_errors": 1}
+[31/50] 12a128e47de3108008b89af120c4d872 (period_batch)
+{"task_id": "12a128e47de3108008b89af120c4d872", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 54.422, "tool_errors": 10}
+[32/50] 6f4bb6548af752085cd0d16ac602d440 (single_order)
+{"task_id": "6f4bb6548af752085cd0d16ac602d440", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 249.047, "tool_errors": 3}
+[33/50] 73345cbf2c62fcbde7e5ebfc212ad29f (period_batch)
+{"task_id": "73345cbf2c62fcbde7e5ebfc212ad29f", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 694.656, "tool_errors": 3}
+[34/50] 68296c053f8f16b2ad8a6d0f86b3c06a (single_order)
+{"task_id": "68296c053f8f16b2ad8a6d0f86b3c06a", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 90.187, "tool_errors": 1}
+[35/50] d2382b88ade3ed723fda39ea95ad50f5 (period_batch)
+{"task_id": "d2382b88ade3ed723fda39ea95ad50f5", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 197.984, "tool_errors": 2}
+[36/50] 4ac9079cd1a9a6e4f188c19fbab1a43a (single_order)
+{"task_id": "4ac9079cd1a9a6e4f188c19fbab1a43a", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 267.437, "tool_errors": 3}
+[37/50] a7e6681e1d9210bd8266050c2521dfda (single_order)
+{"task_id": "a7e6681e1d9210bd8266050c2521dfda", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 72.14, "tool_errors": 1}
+[38/50] fb0a91987e06dd6996b831fc7a3d9ed1 (period_batch)
+{"task_id": "fb0a91987e06dd6996b831fc7a3d9ed1", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 238.657, "tool_errors": 0}
+[39/50] 035929229afc58f1cf56283b97daecbd (single_order)
+{"task_id": "035929229afc58f1cf56283b97daecbd", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 171.672, "tool_errors": 3}
+[40/50] fe24f5375fed04e7472a53d33c16a262 (period_batch)
+{"task_id": "fe24f5375fed04e7472a53d33c16a262", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 80.187, "tool_errors": 2}
+[41/50] ebe4143e309a9a9038e50351c7ab085c (single_order)
+{"task_id": "ebe4143e309a9a9038e50351c7ab085c", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 220.687, "tool_errors": 1}
+[42/50] 6ae2b64ff8bae46b5b50aa337ff5fcd2 (period_batch)
+{"task_id": "6ae2b64ff8bae46b5b50aa337ff5fcd2", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 70.11, "tool_errors": 4}
+[43/50] d270f3bb50f36763edbe7164838994a0 (single_order)
+{"task_id": "d270f3bb50f36763edbe7164838994a0", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 156.766, "tool_errors": 2}
+[44/50] c30f0286048da88d1ed30e915fb97033 (period_batch)
+{"task_id": "c30f0286048da88d1ed30e915fb97033", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 51.437, "tool_errors": 9}
+[45/50] eb9a2829dc13548b19b940cb0ae39d0e (single_order)
+{"task_id": "eb9a2829dc13548b19b940cb0ae39d0e", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 77.375, "tool_errors": 1}
+[46/50] 884760a57d04feae53a54d836898f65f (single_order)
+{"task_id": "884760a57d04feae53a54d836898f65f", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 94.031, "tool_errors": 2}
+[47/50] 4c77bf5bb2f45b005286192ffad584f0 (period_batch)
+{"task_id": "4c77bf5bb2f45b005286192ffad584f0", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 69.641, "tool_errors": 4}
+[48/50] e4687b3effc9622e2070c12b75a65212 (single_order)
+{"task_id": "e4687b3effc9622e2070c12b75a65212", "stop_reason": "completed", "accuracy": 1.0, "elapsed_seconds": 66.484, "tool_errors": 1}
+[49/50] 7ceb1db6f097025c0d80ec6faff76a88 (period_batch)
+{"task_id": "7ceb1db6f097025c0d80ec6faff76a88", "stop_reason": "decision_budget", "accuracy": 0.0, "elapsed_seconds": 228.578, "tool_errors": 6}
+[50/50] 71bf919b9f8768e6932b17b6233317c3 (single_order)
+{"task_id": "71bf919b9f8768e6932b17b6233317c3", "stop_reason": "submission_rejected", "accuracy": 0.0, "elapsed_seconds": 249.391, "tool_errors": 1}
+模型清理：{"status": "closed", "allocated_after_close_mib": 8.13}
+{
+  "tasks": 50,
+  "accuracy": 0.38,
+  "cost": {
+    "currency": "USD",
+    "api_fee": 0.0,
+    "api_fee_status": "see_task_costs",
+    "compute_fee_estimate": null,
+    "compute_fee_status": "not_configured_for_all_tasks",
+    "elapsed_seconds": 10243.87,
+    "reported_token_usage": {
+      "prompt_tokens": 1656907,
+      "completion_tokens": 124124,
+      "total_tokens": 1781031
+    },
+    "token_usage_complete": false
+  },
+  "stop_reasons": {
+    "completed": 19,
+    "timeout": 1,
+    "decision_budget": 19,
+    "submission_rejected": 11
+  }
+}
+完整结果：D:\All_ws\LM_Theory_Practice\End_project\artifacts\qwen_gpu_val50_1000s_20261127_125739

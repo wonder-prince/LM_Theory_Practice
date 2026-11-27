@@ -1,0 +1,795 @@
+{
+  "coverage": "complete",
+  "processed_tasks": 50,
+  "requested_tasks": 50,
+  "fresh_run": true,
+  "current_directory": "qwen_gpu_val50_1000s_20261127_125739",
+  "previous_directory": "qwen_gpu_val50_20261127_completed_081945",
+  "current_timeout_seconds": 1000,
+  "previous_timeout_seconds": 600,
+  "other_inference_budgets_match": true,
+  "core_sources_match": {
+    "model_backends.py": true,
+    "evaluation.py": true,
+    "datasets/prepared/agent_visible/val/tasks.jsonl": true,
+    "agent_runtime.py": true,
+    "requirements.lock.txt": true,
+    "datasets/prepared/agent_visible/rules.json": true,
+    "agent_cli.py": true,
+    "trace_readable.py": true,
+    "requirements-gpu.txt": true,
+    "local_model_backend.py": true,
+    "business_tools.py": true
+  },
+  "current": {
+    "tasks": 50,
+    "correct_tasks": 19,
+    "accuracy": 0.38,
+    "matched_fields": 568,
+    "total_fields": 1134,
+    "field_accuracy": 0.5008818342151675,
+    "successful_calls": 260,
+    "executed_calls": 393,
+    "tool_success_rate": 0.6615776081424937,
+    "stop_reasons": {
+      "completed": 19,
+      "timeout": 1,
+      "decision_budget": 19,
+      "submission_rejected": 11
+    }
+  },
+  "previous_same_tasks": {
+    "tasks": 50,
+    "correct_tasks": 16,
+    "accuracy": 0.32,
+    "matched_fields": 542,
+    "total_fields": 1134,
+    "field_accuracy": 0.47795414462081126,
+    "successful_calls": 260,
+    "executed_calls": 393,
+    "tool_success_rate": 0.6615776081424937,
+    "stop_reasons": {
+      "completed": 16,
+      "timeout": 14,
+      "decision_budget": 14,
+      "submission_rejected": 6
+    }
+  },
+  "change_percentage_points": {
+    "accuracy": 6.0,
+    "field_accuracy": 2.2927689594356258,
+    "tool_success_rate": 0.0
+  },
+  "outcome_group_counts": {
+    "correct_in_both": 16,
+    "newly_correct": 3,
+    "regressed": 0,
+    "wrong_in_both": 31
+  },
+  "stop_reason_transitions": {
+    "completed -> completed": 16,
+    "timeout -> timeout": 1,
+    "decision_budget -> decision_budget": 14,
+    "timeout -> submission_rejected": 5,
+    "timeout -> completed": 3,
+    "submission_rejected -> submission_rejected": 6,
+    "timeout -> decision_budget": 5
+  },
+  "outcome_groups": {
+    "correct_in_both": [
+      "21c3d4e5a0614191e11d55713232e4db",
+      "ed909817f48b358af93551a9f0c7751a",
+      "434488fe8701e3af19135e318acc42ca",
+      "8a91d6131c96cfd5abf66c6bd985f2f6",
+      "75216dd2720419476f3d29de0d924992",
+      "330a87c29959c593780eacca69429c78",
+      "f18646ac434add104caf416811a73193",
+      "30a7a37087ff15f5fc67b95c6eaba71e",
+      "d06f45da76c85fcfc23c4e286e2e14d6",
+      "77d7162fc3232d686b084d11504819d3",
+      "68296c053f8f16b2ad8a6d0f86b3c06a",
+      "a7e6681e1d9210bd8266050c2521dfda",
+      "d270f3bb50f36763edbe7164838994a0",
+      "eb9a2829dc13548b19b940cb0ae39d0e",
+      "884760a57d04feae53a54d836898f65f",
+      "e4687b3effc9622e2070c12b75a65212"
+    ],
+    "newly_correct": [
+      "7f997d6ed7aa6422de146a5b31739cf0",
+      "bd5d5f9c3276a58df77a2419a5efad6c",
+      "01b486c3b0d11490d9b3d0369b87ebd4"
+    ],
+    "regressed": [],
+    "wrong_in_both": [
+      "bf813189fc6640c45b548696cc9b4219",
+      "468468e59dc4ee94b5a2c0c5da79e4bc",
+      "5fc8bf28eec5253836d17a8fb1ed18da",
+      "479170a1ca62896400a0e197f6b2fdeb",
+      "3ddbe5aad5849a4d24754cdbc8498bc7",
+      "d2b7626c6102419a57fc610c02142024",
+      "57fa52b1095d682898df7fa9d77ec043",
+      "cffa67df53c4fdefeabe3a84dbe67ae1",
+      "6d55f5c4bbf5103dbba06e87cac23b9c",
+      "8cd876aedfccd2c3e723c499c8ca29ba",
+      "e77a7d0e9aa1818c036bbec6afafbcb6",
+      "74a7fa70d9396ddf3d5ac116e84017da",
+      "c4f31b0cd50d13bde1a9b4eb712008dc",
+      "1e9c2bdb06a0d03adfc9f4a70b9819b6",
+      "d2b82257bd75cfa1b5ff7e950720c472",
+      "8edf039760facb291bb29f04aa0bc78d",
+      "04e52fd7f0d95f9b37f1bc9759c00f0d",
+      "12a128e47de3108008b89af120c4d872",
+      "6f4bb6548af752085cd0d16ac602d440",
+      "73345cbf2c62fcbde7e5ebfc212ad29f",
+      "d2382b88ade3ed723fda39ea95ad50f5",
+      "4ac9079cd1a9a6e4f188c19fbab1a43a",
+      "fb0a91987e06dd6996b831fc7a3d9ed1",
+      "035929229afc58f1cf56283b97daecbd",
+      "fe24f5375fed04e7472a53d33c16a262",
+      "ebe4143e309a9a9038e50351c7ab085c",
+      "6ae2b64ff8bae46b5b50aa337ff5fcd2",
+      "c30f0286048da88d1ed30e915fb97033",
+      "4c77bf5bb2f45b005286192ffad584f0",
+      "7ceb1db6f097025c0d80ec6faff76a88",
+      "71bf919b9f8768e6932b17b6233317c3"
+    ]
+  },
+  "task_comparison": [
+    {
+      "task_id": "21c3d4e5a0614191e11d55713232e4db",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 422.625,
+      "previous_elapsed_seconds": 423.0
+    },
+    {
+      "task_id": "bf813189fc6640c45b548696cc9b4219",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "timeout",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 1000.281,
+      "previous_elapsed_seconds": 600.407
+    },
+    {
+      "task_id": "ed909817f48b358af93551a9f0c7751a",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 56.0,
+      "previous_elapsed_seconds": 115.484
+    },
+    {
+      "task_id": "468468e59dc4ee94b5a2c0c5da79e4bc",
+      "request_mode": "period_batch",
+      "category": "basic",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 77.875,
+      "previous_elapsed_seconds": 143.516
+    },
+    {
+      "task_id": "5fc8bf28eec5253836d17a8fb1ed18da",
+      "request_mode": "single_order",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 658.593,
+      "previous_elapsed_seconds": 600.016
+    },
+    {
+      "task_id": "479170a1ca62896400a0e197f6b2fdeb",
+      "request_mode": "period_batch",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 125.719,
+      "previous_elapsed_seconds": 278.687
+    },
+    {
+      "task_id": "7f997d6ed7aa6422de146a5b31739cf0",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 134.406,
+      "previous_elapsed_seconds": 600.078
+    },
+    {
+      "task_id": "3ddbe5aad5849a4d24754cdbc8498bc7",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 116.172,
+      "previous_elapsed_seconds": 276.109
+    },
+    {
+      "task_id": "d2b7626c6102419a57fc610c02142024",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "submission_rejected",
+      "current_elapsed_seconds": 185.468,
+      "previous_elapsed_seconds": 423.828
+    },
+    {
+      "task_id": "434488fe8701e3af19135e318acc42ca",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 81.891,
+      "previous_elapsed_seconds": 183.89
+    },
+    {
+      "task_id": "57fa52b1095d682898df7fa9d77ec043",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 114.453,
+      "previous_elapsed_seconds": 298.985
+    },
+    {
+      "task_id": "8a91d6131c96cfd5abf66c6bd985f2f6",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 99.172,
+      "previous_elapsed_seconds": 220.187
+    },
+    {
+      "task_id": "cffa67df53c4fdefeabe3a84dbe67ae1",
+      "request_mode": "period_batch",
+      "category": "basic",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 365.89,
+      "previous_elapsed_seconds": 600.563
+    },
+    {
+      "task_id": "bd5d5f9c3276a58df77a2419a5efad6c",
+      "request_mode": "single_order",
+      "category": "cross_tool",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 343.859,
+      "previous_elapsed_seconds": 600.5
+    },
+    {
+      "task_id": "6d55f5c4bbf5103dbba06e87cac23b9c",
+      "request_mode": "period_batch",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 613.844,
+      "previous_elapsed_seconds": 600.531
+    },
+    {
+      "task_id": "75216dd2720419476f3d29de0d924992",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 155.391,
+      "previous_elapsed_seconds": 458.094
+    },
+    {
+      "task_id": "8cd876aedfccd2c3e723c499c8ca29ba",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 109.171,
+      "previous_elapsed_seconds": 236.062
+    },
+    {
+      "task_id": "330a87c29959c593780eacca69429c78",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 121.375,
+      "previous_elapsed_seconds": 238.891
+    },
+    {
+      "task_id": "f18646ac434add104caf416811a73193",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 164.5,
+      "previous_elapsed_seconds": 326.14
+    },
+    {
+      "task_id": "e77a7d0e9aa1818c036bbec6afafbcb6",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 214.016,
+      "previous_elapsed_seconds": 600.078
+    },
+    {
+      "task_id": "74a7fa70d9396ddf3d5ac116e84017da",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "submission_rejected",
+      "current_elapsed_seconds": 225.234,
+      "previous_elapsed_seconds": 495.75
+    },
+    {
+      "task_id": "c4f31b0cd50d13bde1a9b4eb712008dc",
+      "request_mode": "period_batch",
+      "category": "basic",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 105.485,
+      "previous_elapsed_seconds": 223.515
+    },
+    {
+      "task_id": "30a7a37087ff15f5fc67b95c6eaba71e",
+      "request_mode": "single_order",
+      "category": "cross_tool",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 104.75,
+      "previous_elapsed_seconds": 227.672
+    },
+    {
+      "task_id": "1e9c2bdb06a0d03adfc9f4a70b9819b6",
+      "request_mode": "period_batch",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 163.859,
+      "previous_elapsed_seconds": 326.734
+    },
+    {
+      "task_id": "d06f45da76c85fcfc23c4e286e2e14d6",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 69.313,
+      "previous_elapsed_seconds": 135.188
+    },
+    {
+      "task_id": "d2b82257bd75cfa1b5ff7e950720c472",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 159.875,
+      "previous_elapsed_seconds": 311.484
+    },
+    {
+      "task_id": "8edf039760facb291bb29f04aa0bc78d",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 237.469,
+      "previous_elapsed_seconds": 600.25
+    },
+    {
+      "task_id": "01b486c3b0d11490d9b3d0369b87ebd4",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 320.437,
+      "previous_elapsed_seconds": 600.328
+    },
+    {
+      "task_id": "04e52fd7f0d95f9b37f1bc9759c00f0d",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 165.515,
+      "previous_elapsed_seconds": 379.109
+    },
+    {
+      "task_id": "77d7162fc3232d686b084d11504819d3",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 130.343,
+      "previous_elapsed_seconds": 285.765
+    },
+    {
+      "task_id": "12a128e47de3108008b89af120c4d872",
+      "request_mode": "period_batch",
+      "category": "basic",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 54.422,
+      "previous_elapsed_seconds": 106.031
+    },
+    {
+      "task_id": "6f4bb6548af752085cd0d16ac602d440",
+      "request_mode": "single_order",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "submission_rejected",
+      "current_elapsed_seconds": 249.047,
+      "previous_elapsed_seconds": 551.046
+    },
+    {
+      "task_id": "73345cbf2c62fcbde7e5ebfc212ad29f",
+      "request_mode": "period_batch",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 694.656,
+      "previous_elapsed_seconds": 600.484
+    },
+    {
+      "task_id": "68296c053f8f16b2ad8a6d0f86b3c06a",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 90.187,
+      "previous_elapsed_seconds": 200.297
+    },
+    {
+      "task_id": "d2382b88ade3ed723fda39ea95ad50f5",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "submission_rejected",
+      "current_elapsed_seconds": 197.984,
+      "previous_elapsed_seconds": 432.047
+    },
+    {
+      "task_id": "4ac9079cd1a9a6e4f188c19fbab1a43a",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 267.437,
+      "previous_elapsed_seconds": 600.156
+    },
+    {
+      "task_id": "a7e6681e1d9210bd8266050c2521dfda",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 72.14,
+      "previous_elapsed_seconds": 408.281
+    },
+    {
+      "task_id": "fb0a91987e06dd6996b831fc7a3d9ed1",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 238.657,
+      "previous_elapsed_seconds": 600.407
+    },
+    {
+      "task_id": "035929229afc58f1cf56283b97daecbd",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "submission_rejected",
+      "current_elapsed_seconds": 171.672,
+      "previous_elapsed_seconds": 503.234
+    },
+    {
+      "task_id": "fe24f5375fed04e7472a53d33c16a262",
+      "request_mode": "period_batch",
+      "category": "basic",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 80.187,
+      "previous_elapsed_seconds": 132.922
+    },
+    {
+      "task_id": "ebe4143e309a9a9038e50351c7ab085c",
+      "request_mode": "single_order",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 220.687,
+      "previous_elapsed_seconds": 600.125
+    },
+    {
+      "task_id": "6ae2b64ff8bae46b5b50aa337ff5fcd2",
+      "request_mode": "period_batch",
+      "category": "boundary",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 70.11,
+      "previous_elapsed_seconds": 65.0
+    },
+    {
+      "task_id": "d270f3bb50f36763edbe7164838994a0",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 156.766,
+      "previous_elapsed_seconds": 165.0
+    },
+    {
+      "task_id": "c30f0286048da88d1ed30e915fb97033",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 51.437,
+      "previous_elapsed_seconds": 46.953
+    },
+    {
+      "task_id": "eb9a2829dc13548b19b940cb0ae39d0e",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 77.375,
+      "previous_elapsed_seconds": 81.234
+    },
+    {
+      "task_id": "884760a57d04feae53a54d836898f65f",
+      "request_mode": "single_order",
+      "category": "basic",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 94.031,
+      "previous_elapsed_seconds": 94.828
+    },
+    {
+      "task_id": "4c77bf5bb2f45b005286192ffad584f0",
+      "request_mode": "period_batch",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "decision_budget",
+      "current_elapsed_seconds": 69.641,
+      "previous_elapsed_seconds": 72.484
+    },
+    {
+      "task_id": "e4687b3effc9622e2070c12b75a65212",
+      "request_mode": "single_order",
+      "category": "boundary",
+      "current_accuracy": 1.0,
+      "previous_accuracy": 1.0,
+      "current_stop_reason": "completed",
+      "previous_stop_reason": "completed",
+      "current_elapsed_seconds": 66.484,
+      "previous_elapsed_seconds": 75.0
+    },
+    {
+      "task_id": "7ceb1db6f097025c0d80ec6faff76a88",
+      "request_mode": "period_batch",
+      "category": "basic",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "decision_budget",
+      "previous_stop_reason": "timeout",
+      "current_elapsed_seconds": 228.578,
+      "previous_elapsed_seconds": 600.39
+    },
+    {
+      "task_id": "71bf919b9f8768e6932b17b6233317c3",
+      "request_mode": "single_order",
+      "category": "cross_tool",
+      "current_accuracy": 0.0,
+      "previous_accuracy": 0.0,
+      "current_stop_reason": "submission_rejected",
+      "previous_stop_reason": "submission_rejected",
+      "current_elapsed_seconds": 249.391,
+      "previous_elapsed_seconds": 514.265
+    }
+  ],
+  "by_request_mode": {
+    "period_batch": {
+      "tasks": 22,
+      "correct_tasks": 0,
+      "accuracy": 0.0,
+      "matched_fields": 232,
+      "total_fields": 770,
+      "field_accuracy": 0.3012987012987013,
+      "successful_calls": 138,
+      "executed_calls": 227,
+      "tool_success_rate": 0.6079295154185022,
+      "stop_reasons": {
+        "timeout": 1,
+        "decision_budget": 19,
+        "submission_rejected": 2
+      }
+    },
+    "single_order": {
+      "tasks": 28,
+      "correct_tasks": 19,
+      "accuracy": 0.6785714285714286,
+      "matched_fields": 336,
+      "total_fields": 364,
+      "field_accuracy": 0.9230769230769231,
+      "successful_calls": 122,
+      "executed_calls": 166,
+      "tool_success_rate": 0.7349397590361446,
+      "stop_reasons": {
+        "completed": 19,
+        "submission_rejected": 9
+      }
+    }
+  },
+  "by_category": {
+    "basic": {
+      "tasks": 17,
+      "correct_tasks": 11,
+      "accuracy": 0.6470588235294118,
+      "matched_fields": 184,
+      "total_fields": 353,
+      "field_accuracy": 0.5212464589235127,
+      "successful_calls": 93,
+      "executed_calls": 136,
+      "tool_success_rate": 0.6838235294117647,
+      "stop_reasons": {
+        "completed": 11,
+        "decision_budget": 6
+      }
+    },
+    "boundary": {
+      "tasks": 16,
+      "correct_tasks": 6,
+      "accuracy": 0.375,
+      "matched_fields": 225,
+      "total_fields": 318,
+      "field_accuracy": 0.7075471698113207,
+      "successful_calls": 73,
+      "executed_calls": 110,
+      "tool_success_rate": 0.6636363636363637,
+      "stop_reasons": {
+        "completed": 6,
+        "decision_budget": 5,
+        "submission_rejected": 5
+      }
+    },
+    "cross_tool": {
+      "tasks": 17,
+      "correct_tasks": 2,
+      "accuracy": 0.11764705882352941,
+      "matched_fields": 159,
+      "total_fields": 463,
+      "field_accuracy": 0.3434125269978402,
+      "successful_calls": 94,
+      "executed_calls": 147,
+      "tool_success_rate": 0.6394557823129252,
+      "stop_reasons": {
+        "timeout": 1,
+        "submission_rejected": 6,
+        "decision_budget": 8,
+        "completed": 2
+      }
+    }
+  },
+  "tool_calls_by_name": {
+    "query_orders": 78,
+    "search_receipts": 96,
+    "query_refunds": 58,
+    "find_match_candidates": 95,
+    "get_transaction_evidence": 66
+  },
+  "unused_explicit_tools": [
+    "calculate_reconciliation",
+    "check_duplicate_events",
+    "validate_reconciliation"
+  ],
+  "tool_error_codes": {
+    "INVALID_ARGUMENT": 32,
+    "TRANSACTION_UNAVAILABLE": 101
+  },
+  "exact_plan_but_not_completed_task_ids": [
+    "73345cbf2c62fcbde7e5ebfc212ad29f"
+  ],
+  "submission_validated_tasks": 19,
+  "wall_seconds": 10289.284766,
+  "task_elapsed_seconds": 10243.87,
+  "interpretation": "同基模和同50题，1000秒预算从头重跑，对比前次600秒预算。模型权重未训练，其他预算和Agent核心未变；两次执行/缓存差异可能影响耗时和超时。"
+}

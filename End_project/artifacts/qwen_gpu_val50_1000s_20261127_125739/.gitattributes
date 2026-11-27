@@ -1,0 +1,2 @@
+# Preserve captured bytes and exclude raw records from whitespace checks.
+* -text -whitespace
