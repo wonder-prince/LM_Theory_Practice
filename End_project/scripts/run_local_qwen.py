@@ -97,7 +97,7 @@ def main():
     parser.add_argument('--max-context', type=int, default=16384)
     parser.add_argument('--max-new-tokens', type=int, default=2048)
     parser.add_argument('--max-decisions', type=int, default=12)
-    parser.add_argument('--timeout', type=float, default=600)
+    parser.add_argument('--timeout', type=float, default=1000, help='单题超时秒数（默认 %(default)s）')
     parser.add_argument('--resume-from', type=Path, help='读取原批次已保存前缀，仅执行剩余题；写入新的输出目录')
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'artifacts' /
                         ('local_qwen_' + datetime.now().strftime('%Y%m%d_%H%M%S_%f')))

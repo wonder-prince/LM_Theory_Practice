@@ -44,7 +44,7 @@ Set-Location 'D:\All_ws\LM_Theory_Practice\End_project'
 & '.\.venv-gpu\Scripts\python.exe' -X utf8 scripts/run_local_qwen.py --split val --limit 50
 ```
 
-默认上下文 16384、每轮输出上限 2048 tokens、单题超时 600 秒、最多 12 轮决策。可用 `--max-context`、`--max-new-tokens`、`--timeout`、`--max-decisions` 调整。`--limit`支持1到50，和`--task-id`互斥，只开放train/val。`run_status.json`记录运行进度与结束后的模型清理状态。
+默认上下文 16384、每轮输出上限 2048 tokens、单题超时 1000 秒、最多 12 轮决策。可用 `--max-context`、`--max-new-tokens`、`--timeout`、`--max-decisions` 调整。`--limit`支持1到50，和`--task-id`互斥，只开放train/val。`run_status.json`记录运行进度与结束后的模型清理状态。
 
 模型使用官方 tokenizer 工具模板，自主决定工具与参数。运行不读取 `.env`，无需 API。每题结束即保存 UTF-8 的 `traces.json`、`summary.json`、可直接阅读的 `traces.md` 和 `evaluation.md`，默认输出到新的 `artifacts/local_qwen_时间戳/`。
 
